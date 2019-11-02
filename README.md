@@ -7,6 +7,7 @@ This training is oriented on three areas of Spark SQL. The first area are Spark 
 ## Training Format
 * 6 hours
 * 50% theory, 50% hands on
+* Language: Scala or Python
 
 ## Objectives of the training
 * Learn how Spark SQL module works under the hood
@@ -51,4 +52,4 @@ This training is oriented on three areas of Spark SQL. The first area are Spark 
     * Bucketing
 7. Lab III
 
-For more information or you can contact directly the lecturer via <a href="http://www.linkedin.com/in/vrba-david" target="_blank"> LinkedIn</a>.
+For more information about the training you can contact directly the lecturer via <a href="http://www.linkedin.com/in/vrba-david" target="_blank"> LinkedIn</a>.
