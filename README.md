@@ -36,7 +36,7 @@ This training is oriented on three areas of Spark SQL. The first area are Spark 
         * Statistics Collection
         * Statistics Usage
 2. Lab I
-3. Query Optimization
+3. Query Optimization & Performance tunning
     * Shuffle elimination
         * Bucketing
         * Data repartition (when and how)
@@ -44,8 +44,12 @@ This training is oriented on three areas of Spark SQL. The first area are Spark 
         * One-side shuffle-free join
         * Brodcast join vs Sort-Merge join
     * Data Reuse
+        * Caching
+        * Checkpointing
+        * Reuse Exchange
+    * Optimization tips
+    * Shuffle partitions
 4. Lab II
-5. Shuffle Partitions
 6. Data Layout
     * Different File Formats
     * Partitioning
