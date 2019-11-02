@@ -5,19 +5,35 @@ This is a code base that serves as acompanying content for Spark Training lectur
 
 ## Training Outline
 1. Spark SQL internals - Query Execution
-  * Logical Planning
-  * Physical Planning
-  * Cost Based Optimization
+    * Logical Planning
+        * Catalyst API
+        * Analyzer
+        * Cache Manager
+        * Optimizer
+        * Rules
+        * Extending the optimizer
+        * Limiting the optimizer
+    * Physical Planning
+        * Spark Plan (Query Planner, Strategies)
+        * Executed Plan (Preparation rules)
+        * Understanding operators in Physical Plan
+    * Cost Based Optimization
+        * How CBO works
+        * Statistics Collection
+        * Statistics Usage
 2. Lab I
 3. Query Optimization
     * Shuffle elimination
+        * Bucketing
+        * Data repartition (when and how)
     * Optimizing joins
         * One-side shuffle-free join
         * Brodcast join vs Sort-Merge join
     * Data Reuse
 4. Lab II
-5. Data Layout
+5. Shuffle Partitions
+6. Data Layout
   * Different File Formats
   * Partitioning
   * Bucketing
-6. Lab III
+7. Lab III
