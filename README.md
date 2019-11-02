@@ -50,3 +50,5 @@ This training is oriented on three areas of Spark SQL. The first area are Spark 
     * Partitioning
     * Bucketing
 7. Lab III
+
+For more information or you can contact directly the lecturer via <a href="http://www.linkedin.com/in/vrba-david" target="_blank"> LinkedIn</a>.
