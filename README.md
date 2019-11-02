@@ -1,12 +1,12 @@
 # Apache-Spark-for-Data-Engineers
-Apache Spark training
-
 This is a code base that serves as acompanying content for Spark Training lectured and prepared by David Vrba.
 
 ## Training Description
-This training is oriented on the internals of Spark SQL with the objective to achive efficient execution for Spark jobs. 
+This training is oriented on three areas of Spark SQL. The first area are Spark internals with detailed description of what is happening under the cover when a query is sent for execution. The second area are optimizations based on proper understanding of the query plan. And finaly the last one is related to the data layout in the file system or how to prepare data using Spark for analytical queries.
 
-This training is oriented on three areas of Spark SQL. The first are are Spark internals with detailed description of what is happening under the cover when a query is send for execution. The second area are optimizations based on proper understanding of the query plan. And finaly the last one is data layout or how to prepare data using Spark for analytical queries.
+## Training Format
+* 6 hours
+* 50% theory, 50% hands on
 
 ## Objectives of the training
 * Learn how Spark SQL module works under the hood
