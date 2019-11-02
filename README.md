@@ -12,8 +12,8 @@ This is a code base that serves as acompanying content for Spark Training lectur
 3. Query Optimization
     * Shuffle elimination
     * Optimizing joins
-    * One-side shuffle-free join
-    * Brodcast join vs Sort-Merge join
+        * One-side shuffle-free join
+        * Brodcast join vs Sort-Merge join
     * Data Reuse
 4. Lab II
 5. Data Layout
