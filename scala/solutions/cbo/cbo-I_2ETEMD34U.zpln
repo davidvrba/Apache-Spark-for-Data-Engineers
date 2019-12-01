@@ -1,0 +1,330 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md \n## Task: see how statistics are used\n\u003cbr\u003e\n* turn CBO on\n* save dataframe as table using metastore\n* run simple query and see the query plan with stats using EXPLAIN COST\n* run ANALYZE TABLE and see it again\n* compute stats for individual cols and see the difference\n* compute the histogram",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:06:29.715",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eTask: see how statistics are used\u003c/h2\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003eturn CBO on\u003c/li\u003e\n  \u003cli\u003esave dataframe as table using metastore\u003c/li\u003e\n  \u003cli\u003erun simple query and see the query plan with stats using EXPLAIN COST\u003c/li\u003e\n  \u003cli\u003erun ANALYZE TABLE and see it again\u003c/li\u003e\n  \u003cli\u003ecompute stats for individual cols and see the difference\u003c/li\u003e\n  \u003cli\u003ecompute the histogram\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575230573546_-1291087309",
+      "id": "paragraph_1575230573546_-1291087309",
+      "dateCreated": "2019-12-01 21:02:53.546",
+      "dateStarted": "2019-12-01 21:06:29.715",
+      "dateFinished": "2019-12-01 21:06:29.721",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val usersInputPath \u003d \"/home/student/Apache-Spark-for-Data-Engineers/data/users\"\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:14:43.892",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34musersInputPath\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d /home/student/Apache-Spark-for-Data-Engineers/data/users\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575230892473_-230524676",
+      "id": "paragraph_1575230892473_-230524676",
+      "dateCreated": "2019-12-01 21:08:12.473",
+      "dateStarted": "2019-12-01 21:14:43.898",
+      "dateFinished": "2019-12-01 21:14:44.010",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n### Check CBO",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:06:33.620",
+      "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
+        "results": {},
+        "enabled": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCheck CBO\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575230597809_-1522683249",
+      "id": "paragraph_1575230597809_-1522683249",
+      "dateCreated": "2019-12-01 21:03:17.809",
+      "dateStarted": "2019-12-01 21:06:33.621",
+      "dateFinished": "2019-12-01 21:06:33.624",
+      "status": "FINISHED"
+    },
+    {
+      "text": "spark.conf.get(\"spark.sql.cbo.enabled\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:06:36.825",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres7\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m \u003d false\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575230636419_-335788280",
+      "id": "paragraph_1575230636419_-335788280",
+      "dateCreated": "2019-12-01 21:03:56.419",
+      "dateStarted": "2019-12-01 21:06:36.830",
+      "dateFinished": "2019-12-01 21:06:36.953",
+      "status": "FINISHED"
+    },
+    {
+      "text": "val usersDF \u003d spark.read.parquet(usersInputPath)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:15:12.498",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34musersDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [user_id: bigint, display_name: string ... 5 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575230696510_225834298",
+      "id": "paragraph_1575230696510_225834298",
+      "dateCreated": "2019-12-01 21:04:56.510",
+      "dateStarted": "2019-12-01 21:15:12.505",
+      "dateFinished": "2019-12-01 21:15:13.494",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md #### Create view from the DataFrame\n\nHint:\n* use createOrReplaceTempView",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:16:51.696",
+      "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
+        "results": {},
+        "enabled": true,
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eCreate view from the DataFrame\u003c/h4\u003e\n\u003cp\u003eHint:\u003cbr/\u003e* use createOrReplaceTempView\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575231292801_656111178",
+      "id": "paragraph_1575231292801_656111178",
+      "dateCreated": "2019-12-01 21:14:52.801",
+      "dateStarted": "2019-12-01 21:16:51.696",
+      "dateFinished": "2019-12-01 21:16:51.700",
+      "status": "FINISHED"
+    },
+    {
+      "text": "// your code here:\nusersDF.createOrReplaceTempView(\"usersDF\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-01 21:17:56.936",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575231320892_1752203464",
+      "id": "paragraph_1575231320892_1752203464",
+      "dateCreated": "2019-12-01 21:15:20.893",
+      "dateStarted": "2019-12-01 21:17:56.941",
+      "dateFinished": "2019-12-01 21:17:57.120",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575231476940_-83413734",
+      "id": "paragraph_1575231476940_-83413734",
+      "dateCreated": "2019-12-01 21:17:56.940",
+      "status": "READY"
+    }
+  ],
+  "name": "cbo-I",
+  "id": "2ETEMD34U",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-SNAPSHOT",
+  "permissions": {},
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": false
+  },
+  "path": "/solutions/cbo/cbo-I"
+}
