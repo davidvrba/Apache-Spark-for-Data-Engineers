@@ -62,15 +62,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+--------+-----------+-----------+\n|database|  tableName|isTemporary|\n+--------+-----------+-----------+\n| default|  questions|      false|\n| default| questionsb|      false|\n| default|questionsbp|      false|\n| default|questionsnb|      false|\n| default|      users|      false|\n| default|     usersb|      false|\n| default|    usersnb|      false|\n+--------+-----------+-----------+\n\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1575229537013_-537929987",
@@ -105,15 +96,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m \u003d [user_id: bigint, display_name: string ... 5 more fields]\n"
-          }
-        ]
-      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1575229589272_410197824",
@@ -124,8 +106,9 @@
       "status": "FINISHED"
     },
     {
+      "text": "df.queryExecution.analyzed",
       "user": "anonymous",
-      "dateUpdated": "2019-12-01 20:48:03.467",
+      "dateUpdated": "2019-12-01 20:56:23.949",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -137,6 +120,9 @@
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
         "fontSize": 9.0,
+        "runOnSelectionChange": true,
+        "title": false,
+        "checkEmpty": true,
         "results": {},
         "enabled": true
       },
@@ -144,11 +130,36 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres4\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.catalyst.plans.logical.LogicalPlan\u001b[0m \u003d\nSubqueryAlias `default`.`users`\n+- Relation[user_id#16L,display_name#17,location#18,downvotes#19L,upvotes#20L,reputation#21L,views#22L] parquet\n"
+          }
+        ]
+      },
       "apps": [],
       "progressUpdateIntervalMs": 500,
       "jobName": "paragraph_1575229630165_479357021",
       "id": "paragraph_1575229630165_479357021",
       "dateCreated": "2019-12-01 20:47:10.165",
+      "dateStarted": "2019-12-01 20:56:23.954",
+      "dateFinished": "2019-12-01 20:56:24.121",
+      "status": "FINISHED"
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1575230175801_1353787921",
+      "id": "paragraph_1575230175801_1353787921",
+      "dateCreated": "2019-12-01 20:56:15.802",
       "status": "READY"
     }
   ],
