@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "//spark.version\n\n//tady je chybny kod\n\nprintln(spark.version)",
+      "text": "println(spark.version)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-04 17:17:47.440",
+      "dateUpdated": "2019-12-04 18:01:02.878",
       "config": {},
       "settings": {
         "params": {},
@@ -23,8 +23,8 @@
       "jobName": "paragraph_1575474190259_-1578016672",
       "id": "paragraph_1575474190259_-1578016672",
       "dateCreated": "2019-12-04 16:43:10.259",
-      "dateStarted": "2019-12-04 17:17:47.442",
-      "dateFinished": "2019-12-04 17:17:47.554",
+      "dateStarted": "2019-12-04 18:01:02.883",
+      "dateFinished": "2019-12-04 18:01:02.972",
       "status": "FINISHED"
     },
     {

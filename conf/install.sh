@@ -27,11 +27,12 @@ sudo -u postgres bash -c "psql -c \"ALTER USER postgres PASSWORD 'postgres'; \" 
 
 source ~/.bashrc
 
-git clone https://github.com/apache/zeppelin.git
+#git clone https://github.com/apache/zeppelin.git
+#cd /home/student/zeppelin
+#mvn clean package -DskipTests
 
-cd /home/student/zeppelin
-
-mvn clean package -DskipTests
+wget /home/student http://apache.miloslavbrada.cz/zeppelin/zeppelin-0.8.2/zeppelin-0.8.2-bin-all.tgz
+tar xvf zeppelin-0.8.2-bin-all.tgz
 
 cp /home/student/zeppelin/conf/zeppelin-env.sh.template /home/student/zeppelin/conf/zeppelin-env.sh
 
