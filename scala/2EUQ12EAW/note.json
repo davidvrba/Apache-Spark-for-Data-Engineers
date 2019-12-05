@@ -1,0 +1,68 @@
+{
+  "paragraphs": [
+    {
+      "text": "spark.version",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 18:52:17.743",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res2: String \u003d 2.4.4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575568331640_-905114141",
+      "id": "20191205-185211_316286681",
+      "dateCreated": "2019-12-05 18:52:11.640",
+      "dateStarted": "2019-12-05 18:52:17.768",
+      "dateFinished": "2019-12-05 18:52:17.918",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575568337743_-488118058",
+      "id": "20191205-185217_958624423",
+      "dateCreated": "2019-12-05 18:52:17.743",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "git_test/nested_test/nested_notebook",
+  "id": "2EUQ12EAW",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
