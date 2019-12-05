@@ -3,7 +3,7 @@
     {
       "text": "println(spark.version)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-04 21:09:49.810",
+      "dateUpdated": "2019-12-04 21:41:02.857",
       "config": {},
       "settings": {
         "params": {},
@@ -19,40 +19,39 @@
         ]
       },
       "apps": [],
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1575474190259_-1578016672",
+      "jobName": "paragraph_1575492062857_607659188",
       "id": "paragraph_1575474190259_-1578016672",
-      "dateCreated": "2019-12-04 16:43:10.259",
-      "dateStarted": "2019-12-04 21:09:49.811",
-      "dateFinished": "2019-12-04 21:09:49.978",
-      "status": "FINISHED"
+      "dateCreated": "2019-12-04 21:41:02.857",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
     },
     {
       "user": "anonymous",
+      "dateUpdated": "2019-12-04 21:41:02.858",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1575474196400_-626467682",
+      "jobName": "paragraph_1575492062858_-738695639",
       "id": "paragraph_1575474196400_-626467682",
-      "dateCreated": "2019-12-04 16:43:16.400",
-      "status": "FINISHED"
+      "dateCreated": "2019-12-04 21:41:02.858",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
     }
   ],
   "name": "spark-version",
-  "id": "2EWCBR9G2",
-  "defaultInterpreterGroup": "spark",
-  "version": "0.9.0-SNAPSHOT",
-  "permissions": {},
+  "id": "2EX62P24B",
   "noteParams": {},
   "noteForms": {},
-  "angularObjects": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
   "config": {
     "isZeppelinNotebookCronEnable": false
   },
-  "info": {},
-  "path": "/spark-version"
+  "info": {}
 }

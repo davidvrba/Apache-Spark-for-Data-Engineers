@@ -1,0 +1,101 @@
+{
+  "paragraphs": [
+    {
+      "text": "val df \u003d spark.range(10)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 18:34:53.183",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.Dataset[Long] \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575567280473_-1281145205",
+      "id": "20191205-183440_1911902870",
+      "dateCreated": "2019-12-05 18:34:40.473",
+      "dateStarted": "2019-12-05 18:34:53.215",
+      "dateFinished": "2019-12-05 18:35:03.708",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-05 18:35:09.501",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: Long \u003d 10\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575567293191_2052231001",
+      "id": "20191205-183453_2040874913",
+      "dateCreated": "2019-12-05 18:34:53.191",
+      "dateStarted": "2019-12-05 18:35:09.519",
+      "dateFinished": "2019-12-05 18:35:11.132",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575567304736_1221097074",
+      "id": "20191205-183504_1576521930",
+      "dateCreated": "2019-12-05 18:35:04.736",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "git_test/testing_git",
+  "id": "2EVZ32UGD",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
