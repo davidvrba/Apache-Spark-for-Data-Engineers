@@ -44,4 +44,4 @@ cd /home/student/zeppelin-0.8.2-bin-all
 ./bin/zeppelin-daemon.sh start
 
 #should return "2.4.4\n"
-curl -X POST http://localhost:8080/api/notebook/run/2EWCBR9G2/paragraph_1575474190259_-1578016672 | jq '.body.msg'[0]'.data'
+curl -X POST http://localhost:8080/api/notebook/run/2EX62P24B/paragraph_1575474190259_-1578016672 | jq '.body.msg'[0]'.data'
