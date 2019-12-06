@@ -3,7 +3,7 @@
     {
       "text": "spark.version",
       "user": "anonymous",
-      "dateUpdated": "2019-12-05 18:52:17.743",
+      "dateUpdated": "2019-12-06 07:04:02.771",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -26,7 +26,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "res2: String \u003d 2.4.4\n"
+            "data": "res1: String \u003d 2.4.4\n"
           }
         ]
       },
@@ -34,8 +34,80 @@
       "jobName": "paragraph_1575568331640_-905114141",
       "id": "20191205-185211_316286681",
       "dateCreated": "2019-12-05 18:52:11.640",
-      "dateStarted": "2019-12-05 18:52:17.768",
-      "dateFinished": "2019-12-05 18:52:17.918",
+      "dateStarted": "2019-12-06 07:04:02.815",
+      "dateFinished": "2019-12-06 07:04:38.028",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"show tables\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-06 07:12:53.636",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+----------+-----------+\n|database| tableName|isTemporary|\n+--------+----------+-----------+\n| default|   answers|      false|\n| default|questionsp|      false|\n| default|     users|      false|\n+--------+----------+-----------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575568337743_-488118058",
+      "id": "20191205-185217_958624423",
+      "dateCreated": "2019-12-05 18:52:17.743",
+      "dateStarted": "2019-12-06 07:12:53.669",
+      "dateFinished": "2019-12-06 07:13:01.605",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.table(\"answers\").count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-06 07:13:46.579",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res6: Long \u003d 189105\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575612292618_-782171917",
+      "id": "20191206-070452_755472016",
+      "dateCreated": "2019-12-06 07:04:52.618",
+      "dateStarted": "2019-12-06 07:13:46.594",
+      "dateFinished": "2019-12-06 07:13:46.972",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -47,9 +119,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575568337743_-488118058",
-      "id": "20191205-185217_958624423",
-      "dateCreated": "2019-12-05 18:52:17.743",
+      "jobName": "paragraph_1575612811787_-1217473735",
+      "id": "20191206-071331_1475217130",
+      "dateCreated": "2019-12-06 07:13:31.787",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
