@@ -3,7 +3,7 @@
     {
       "text": "%md \n## Task: see how statistics are used\n\u003cbr\u003e\n* turn CBO on\n* save dataframe as table using metastore\n* run simple query and see the query plan with stats using EXPLAIN COST\n* run ANALYZE TABLE and see it again\n* compute stats for individual cols and see the difference\n* compute the histogram",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:09.767",
+      "dateUpdated": "2019-12-07 14:13:43.351",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -26,20 +26,69 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eTask: see how statistics are used\u003c/h2\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003eturn CBO on\u003c/li\u003e\n  \u003cli\u003esave dataframe as table using metastore\u003c/li\u003e\n  \u003cli\u003erun simple query and see the query plan with stats using EXPLAIN COST\u003c/li\u003e\n  \u003cli\u003erun ANALYZE TABLE and see it again\u003c/li\u003e\n  \u003cli\u003ecompute stats for individual cols and see the difference\u003c/li\u003e\n  \u003cli\u003ecompute the histogram\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232008_1189845734",
       "id": "paragraph_1575230573546_-1291087309",
       "dateCreated": "2019-12-06 07:20:32.008",
-      "dateStarted": "2019-12-06 07:24:09.819",
-      "dateFinished": "2019-12-06 07:24:09.829",
+      "dateStarted": "2019-12-07 14:13:43.351",
+      "dateFinished": "2019-12-07 14:13:43.358",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val usersInputPath \u003d \"/home/student/Apache-Spark-for-Data-Engineers/data/users\"\nval usersOutputPath \u003d \"/home/student/Apache-Spark-for-Data-Engineers/output/users\"\n\nval tableName \u003d \"users\"\n",
+      "text": "%md\n### Statistics collection \u0026 propagation\n\n* see how statistics are collected and used when the data is taken directly from the path\n* see how it changes when metastore is used\n* see what impact has if a table is partitoned",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:26:25.602",
+      "dateUpdated": "2019-12-07 14:13:46.027",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eStatistics collection \u0026amp; propagation\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003esee how statistics are collected and used when the data is taken directly from the path\u003c/li\u003e\n  \u003cli\u003esee how it changes when metastore is used\u003c/li\u003e\n  \u003cli\u003esee what impact has if a table is partitoned\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575720426647_-1444474226",
+      "id": "20191207-130706_1973703296",
+      "dateCreated": "2019-12-07 13:07:06.647",
+      "dateStarted": "2019-12-07 14:13:46.027",
+      "dateFinished": "2019-12-07 14:13:46.031",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//val usersInputPath \u003d \"/home/student/Apache-Spark-for-Data-Engineers/data/users\"\n//val usersOutputPath \u003d \"/home/student/Apache-Spark-for-Data-Engineers/output/users\"\n\nval usersInputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\"\nval usersOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\"\n\nval tableName \u003d \"users\"",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:44.758",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -64,8 +113,8 @@
       "jobName": "paragraph_1575613232013_-1723959978",
       "id": "paragraph_1575230892473_-230524676",
       "dateCreated": "2019-12-06 07:20:32.013",
-      "dateStarted": "2019-12-06 07:24:09.980",
-      "dateFinished": "2019-12-06 07:24:10.148",
+      "dateStarted": "2019-12-07 14:06:44.780",
+      "dateFinished": "2019-12-07 14:06:44.872",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -73,9 +122,9 @@
     {
       "text": "%md\n### Check CBO",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:10.182",
+      "dateUpdated": "2019-12-07 14:13:49.457",
       "config": {
-        "tableHide": true,
+        "tableHide": false,
         "editorSetting": {
           "language": "markdown",
           "editOnDblClick": true,
@@ -85,7 +134,7 @@
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
         "fontSize": 9.0,
-        "editorHide": false,
+        "editorHide": true,
         "runOnSelectionChange": true,
         "title": false,
         "checkEmpty": true,
@@ -96,20 +145,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCheck CBO\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232015_1820613419",
       "id": "paragraph_1575230597809_-1522683249",
       "dateCreated": "2019-12-06 07:20:32.015",
-      "dateStarted": "2019-12-06 07:24:10.225",
-      "dateFinished": "2019-12-06 07:24:10.228",
+      "dateStarted": "2019-12-07 14:13:49.457",
+      "dateFinished": "2019-12-07 14:13:49.460",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.conf.get(\"spark.sql.cbo.enabled\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:10.328",
+      "dateUpdated": "2019-12-07 14:06:45.016",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -135,8 +192,8 @@
       "jobName": "paragraph_1575613232017_1369917095",
       "id": "paragraph_1575230636419_-335788280",
       "dateCreated": "2019-12-06 07:20:32.017",
-      "dateStarted": "2019-12-06 07:24:10.364",
-      "dateFinished": "2019-12-06 07:24:10.533",
+      "dateStarted": "2019-12-07 14:06:45.038",
+      "dateFinished": "2019-12-07 14:06:45.132",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -144,7 +201,7 @@
     {
       "text": "spark.conf.set(\"spark.sql.cbo.enabled\", true)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:10.565",
+      "dateUpdated": "2019-12-07 14:06:45.138",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -169,8 +226,8 @@
       "jobName": "paragraph_1575613232018_525273702",
       "id": "paragraph_1575403707199_1417221082",
       "dateCreated": "2019-12-06 07:20:32.018",
-      "dateStarted": "2019-12-06 07:24:10.603",
-      "dateFinished": "2019-12-06 07:24:10.742",
+      "dateStarted": "2019-12-07 14:06:45.194",
+      "dateFinished": "2019-12-07 14:06:45.279",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -178,7 +235,7 @@
     {
       "text": "val usersDF \u003d spark.read.parquet(usersInputPath)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:10.808",
+      "dateUpdated": "2019-12-07 14:06:45.296",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -207,7 +264,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://10.13.4.90:4041/jobs/job?id\u003d2"
+            "http://192.168.0.12:4042/jobs/job?id\u003d69"
           ],
           "interpreterSettingId": "spark"
         }
@@ -216,8 +273,8 @@
       "jobName": "paragraph_1575613232019_1362708119",
       "id": "paragraph_1575230696510_225834298",
       "dateCreated": "2019-12-06 07:20:32.019",
-      "dateStarted": "2019-12-06 07:24:10.835",
-      "dateFinished": "2019-12-06 07:24:11.171",
+      "dateStarted": "2019-12-07 14:06:45.337",
+      "dateFinished": "2019-12-07 14:06:45.548",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -225,7 +282,7 @@
     {
       "text": "%md #### Create view from the DataFrame\n\nHint:\n* use createOrReplaceTempView",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:11.245",
+      "dateUpdated": "2019-12-07 14:13:52.242",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -248,20 +305,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eCreate view from the DataFrame\u003c/h4\u003e\n\u003cp\u003eHint:\u003cbr/\u003e* use createOrReplaceTempView\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232020_-1334701350",
       "id": "paragraph_1575231292801_656111178",
       "dateCreated": "2019-12-06 07:20:32.020",
-      "dateStarted": "2019-12-06 07:24:11.282",
-      "dateFinished": "2019-12-06 07:24:11.286",
+      "dateStarted": "2019-12-07 14:13:52.242",
+      "dateFinished": "2019-12-07 14:13:52.245",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "// your code here:\nusersDF.createOrReplaceTempView(\"usersDF\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:11.386",
+      "dateUpdated": "2019-12-07 14:06:45.765",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -286,8 +351,8 @@
       "jobName": "paragraph_1575613232022_-483000987",
       "id": "paragraph_1575231320892_1752203464",
       "dateCreated": "2019-12-06 07:20:32.022",
-      "dateStarted": "2019-12-06 07:24:11.420",
-      "dateFinished": "2019-12-06 07:24:11.562",
+      "dateStarted": "2019-12-07 14:06:45.789",
+      "dateFinished": "2019-12-07 14:06:45.871",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -295,7 +360,7 @@
     {
       "text": "%md #### See the query plan with stats\n\nHint:\n* run sql EXPLAIN COST on query with filter user_id \u003c -1000",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:11.623",
+      "dateUpdated": "2019-12-07 14:14:01.025",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -318,20 +383,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the query plan with stats\u003c/h4\u003e\n\u003cp\u003eHint:\u003cbr/\u003e* run sql EXPLAIN COST on query with filter user_id \u0026lt; -1000\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232023_1987280165",
       "id": "paragraph_1575231476940_-83413734",
       "dateCreated": "2019-12-06 07:20:32.023",
-      "dateStarted": "2019-12-06 07:24:11.652",
-      "dateFinished": "2019-12-06 07:24:11.656",
+      "dateStarted": "2019-12-07 14:14:01.025",
+      "dateFinished": "2019-12-07 14:14:01.027",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "spark.sql(\"EXPLAIN COST select * from usersDF where user_id \u003c -1000\").show(truncate\u003dfalse)\n",
+      "text": "spark.sql(\"EXPLAIN COST select * from usersDF where user_id \u003c -1000\").show(truncate\u003dfalse)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:11.752",
+      "dateUpdated": "2019-12-07 14:14:00.359",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -356,16 +429,16 @@
       "jobName": "paragraph_1575613232026_2135965629",
       "id": "paragraph_1575314971994_-2105488670",
       "dateCreated": "2019-12-06 07:20:32.026",
-      "dateStarted": "2019-12-06 07:24:11.782",
-      "dateFinished": "2019-12-06 07:24:12.178",
+      "dateStarted": "2019-12-07 14:06:46.032",
+      "dateFinished": "2019-12-07 14:06:46.178",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md #### Now save the table using metastore\n\nHint\n* use saveAsTable()\n",
+      "text": "%md #### See the query plan again\n\n* Now read the table from metastore",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:12.186",
+      "dateUpdated": "2019-12-07 14:14:07.033",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -388,82 +461,51 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the query plan again\u003c/h4\u003e\n\u003cul\u003e\n  \u003cli\u003eNow read the table from metastore\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
-      "jobName": "paragraph_1575613232028_521185012",
-      "id": "paragraph_1575314974515_1780943587",
-      "dateCreated": "2019-12-06 07:20:32.028",
-      "dateStarted": "2019-12-06 07:24:12.244",
-      "dateFinished": "2019-12-06 07:24:12.248",
+      "jobName": "paragraph_1575613232031_-1194287835",
+      "id": "paragraph_1575314978166_-970040033",
+      "dateCreated": "2019-12-06 07:20:32.031",
+      "dateStarted": "2019-12-07 14:14:07.033",
+      "dateFinished": "2019-12-07 14:14:07.037",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "\nusersDF\n  .write\n  .mode(\"overwrite\")\n  .option(\"path\", usersOutputPath)\n  .saveAsTable(tableName)\n",
+      "text": "spark.sql(\"show tables\").show()",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:12.346",
+      "dateUpdated": "2019-12-07 14:06:46.357",
       "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
         "editorSetting": {
           "language": "scala",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "fontSize": 9.0,
-        "runOnSelectionChange": true,
-        "title": false,
-        "checkEmpty": true,
-        "results": {},
-        "enabled": true
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575613232030_2036803586",
-      "id": "paragraph_1575314976199_-375234612",
-      "dateCreated": "2019-12-06 07:20:32.030",
-      "dateStarted": "2019-12-06 07:24:12.394",
-      "dateFinished": "2019-12-06 07:24:14.565",
-      "status": "FINISHED",
-      "errorMessage": "",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md #### See the query plan again\n\n* Now read the table from metastore\n",
-      "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:14.638",
-      "config": {
-        "tableHide": false,
-        "editorSetting": {
-          "language": "markdown",
-          "editOnDblClick": true,
-          "completionKey": "TAB",
-          "completionSupport": false
-        },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/markdown",
-        "fontSize": 9.0,
-        "editorHide": true,
-        "runOnSelectionChange": true,
-        "title": false,
-        "checkEmpty": true,
-        "results": {},
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "apps": [],
-      "jobName": "paragraph_1575613232031_-1194287835",
-      "id": "paragraph_1575314978166_-970040033",
-      "dateCreated": "2019-12-06 07:20:32.031",
-      "dateStarted": "2019-12-06 07:24:14.660",
-      "dateFinished": "2019-12-06 07:24:14.676",
+      "jobName": "paragraph_1575720976685_-1758214672",
+      "id": "20191207-131616_893995452",
+      "dateCreated": "2019-12-07 13:16:16.685",
+      "dateStarted": "2019-12-07 14:06:46.378",
+      "dateFinished": "2019-12-07 14:06:46.476",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -471,7 +513,7 @@
     {
       "text": "spark.sql(\"EXPLAIN COST select * from users where user_id \u003c -1000\").show(truncate\u003dfalse)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:14.760",
+      "dateUpdated": "2019-12-07 14:06:46.482",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -496,8 +538,8 @@
       "jobName": "paragraph_1575613232032_-861727099",
       "id": "paragraph_1575315057461_1912232642",
       "dateCreated": "2019-12-06 07:20:32.032",
-      "dateStarted": "2019-12-06 07:24:14.789",
-      "dateFinished": "2019-12-06 07:24:15.065",
+      "dateStarted": "2019-12-07 14:06:46.525",
+      "dateFinished": "2019-12-07 14:06:46.629",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -505,7 +547,7 @@
     {
       "text": "%md #### See the statistics for the table\n\nHint\n* use sql DESC EXTENDED",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:15.094",
+      "dateUpdated": "2019-12-07 14:14:10.978",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -528,20 +570,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the statistics for the table\u003c/h4\u003e\n\u003cp\u003eHint\u003cbr/\u003e* use sql DESC EXTENDED\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232034_705838579",
       "id": "paragraph_1575315059407_1946858652",
       "dateCreated": "2019-12-06 07:20:32.034",
-      "dateStarted": "2019-12-06 07:24:15.125",
-      "dateFinished": "2019-12-06 07:24:15.129",
+      "dateStarted": "2019-12-07 14:14:10.979",
+      "dateFinished": "2019-12-07 14:14:10.981",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "spark.sql(\"DESC EXTENDED users\").show(numRows\u003d50, truncate\u003d50)\n",
+      "text": "spark.sql(\"DESC EXTENDED users\").show(numRows\u003d50, truncate\u003d50)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:15.225",
+      "dateUpdated": "2019-12-07 14:14:14.182",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -566,8 +616,8 @@
       "jobName": "paragraph_1575613232035_182410601",
       "id": "paragraph_1575315062246_562386941",
       "dateCreated": "2019-12-06 07:20:32.035",
-      "dateStarted": "2019-12-06 07:24:15.247",
-      "dateFinished": "2019-12-06 07:24:15.483",
+      "dateStarted": "2019-12-07 14:14:14.203",
+      "dateFinished": "2019-12-07 14:14:14.343",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -575,7 +625,7 @@
     {
       "text": "%md #### Compute the statistics\n\nHint\n* run sql ANALYZE TABLE ... COMPUTE STATISTICS",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:15.553",
+      "dateUpdated": "2019-12-07 14:14:25.330",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -598,20 +648,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eCompute the statistics\u003c/h4\u003e\n\u003cp\u003eHint\u003cbr/\u003e* run sql ANALYZE TABLE \u0026hellip; COMPUTE STATISTICS\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232036_-874599778",
       "id": "paragraph_1575315125916_511617739",
       "dateCreated": "2019-12-06 07:20:32.036",
-      "dateStarted": "2019-12-06 07:24:15.582",
-      "dateFinished": "2019-12-06 07:24:15.588",
+      "dateStarted": "2019-12-07 14:14:25.330",
+      "dateFinished": "2019-12-07 14:14:25.333",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.sql(\"ANALYZE TABLE users COMPUTE STATISTICS\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:15.686",
+      "dateUpdated": "2019-12-07 14:06:47.211",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -639,7 +697,7 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://10.13.4.90:4041/jobs/job?id\u003d4"
+            "http://192.168.0.12:4042/jobs/job?id\u003d70"
           ],
           "interpreterSettingId": "spark"
         }
@@ -648,8 +706,8 @@
       "jobName": "paragraph_1575613232037_303433489",
       "id": "paragraph_1575315128867_1427272487",
       "dateCreated": "2019-12-06 07:20:32.037",
-      "dateStarted": "2019-12-06 07:24:15.714",
-      "dateFinished": "2019-12-06 07:24:16.346",
+      "dateStarted": "2019-12-07 14:06:47.233",
+      "dateFinished": "2019-12-07 14:06:47.441",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -657,7 +715,7 @@
     {
       "text": "%md #### See the stats again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:16.421",
+      "dateUpdated": "2019-12-07 14:14:28.479",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -680,20 +738,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the stats again\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232039_-1294708525",
       "id": "paragraph_1575315212295_1899646874",
       "dateCreated": "2019-12-06 07:20:32.039",
-      "dateStarted": "2019-12-06 07:24:16.450",
-      "dateFinished": "2019-12-06 07:24:16.453",
+      "dateStarted": "2019-12-07 14:14:28.479",
+      "dateFinished": "2019-12-07 14:14:28.481",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.sql(\"DESC EXTENDED users\").show(30, 50)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:16.554",
+      "dateUpdated": "2019-12-07 14:06:47.663",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -718,8 +784,8 @@
       "jobName": "paragraph_1575613232040_2002915405",
       "id": "paragraph_1575315224819_-1992405238",
       "dateCreated": "2019-12-06 07:20:32.040",
-      "dateStarted": "2019-12-06 07:24:16.584",
-      "dateFinished": "2019-12-06 07:24:16.803",
+      "dateStarted": "2019-12-07 14:06:47.688",
+      "dateFinished": "2019-12-07 14:06:47.798",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -727,7 +793,7 @@
     {
       "text": "%md #### See the query plan for the query again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:16.890",
+      "dateUpdated": "2019-12-07 14:14:36.116",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -750,20 +816,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the query plan for the query again\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232041_-1281329418",
       "id": "paragraph_1575315245149_-617875177",
       "dateCreated": "2019-12-06 07:20:32.041",
-      "dateStarted": "2019-12-06 07:24:16.914",
-      "dateFinished": "2019-12-06 07:24:16.917",
+      "dateStarted": "2019-12-07 14:14:36.116",
+      "dateFinished": "2019-12-07 14:14:36.120",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "spark.sql(\"EXPLAIN COST select * from users where user_id \u003c -1000\").show(30, false)",
+      "text": "// see that the value sizeInBytes is in mismatch with stats in metastore\n\nspark.sql(\"EXPLAIN COST select * from users where user_id \u003c -1000\").show(30, false)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:17.017",
+      "dateUpdated": "2019-12-07 14:06:48.015",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -788,8 +862,286 @@
       "jobName": "paragraph_1575613232042_1674381832",
       "id": "paragraph_1575315259406_-1930134814",
       "dateCreated": "2019-12-06 07:20:32.042",
-      "dateStarted": "2019-12-06 07:24:17.038",
-      "dateFinished": "2019-12-06 07:24:17.216",
+      "dateStarted": "2019-12-07 14:06:48.036",
+      "dateFinished": "2019-12-07 14:06:48.157",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Now see what happens if cbo is OFF:\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:14:37.959",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eNow see what happens if cbo is OFF:\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575722091649_-1211997929",
+      "id": "20191207-133451_225484796",
+      "dateCreated": "2019-12-07 13:34:51.649",
+      "dateStarted": "2019-12-07 14:14:37.959",
+      "dateFinished": "2019-12-07 14:14:37.961",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.cbo.enabled\", false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:48.363",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575721457070_1614443350",
+      "id": "20191207-132417_1730595930",
+      "dateCreated": "2019-12-07 13:24:17.070",
+      "dateStarted": "2019-12-07 14:06:48.386",
+      "dateFinished": "2019-12-07 14:06:48.480",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"EXPLAIN COST select * from users where user_id \u003c -1000\").show(30, false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:48.488",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575722136387_-665852603",
+      "id": "20191207-133536_1576727751",
+      "dateCreated": "2019-12-07 13:35:36.387",
+      "dateStarted": "2019-12-07 14:06:48.524",
+      "dateFinished": "2019-12-07 14:06:48.636",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Nothing changed - stats are cached",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:14:40.949",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eNothing changed - stats are cached\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575722222756_471751214",
+      "id": "20191207-133702_746319632",
+      "dateCreated": "2019-12-07 13:37:02.756",
+      "dateStarted": "2019-12-07 14:14:40.949",
+      "dateFinished": "2019-12-07 14:14:40.951",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// invalidate cache\nspark.sql(\"refresh table users\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:48.855",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575721689221_54522216",
+      "id": "20191207-132809_1520640552",
+      "dateCreated": "2019-12-07 13:28:09.221",
+      "dateStarted": "2019-12-07 14:06:48.877",
+      "dateFinished": "2019-12-07 14:06:48.986",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// see again - now stats is taken from metastore, but only sizeInBytes\nspark.sql(\"EXPLAIN COST select * from users where user_id \u003c -1000\").show(30, false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:49.082",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575721621403_1762332209",
+      "id": "20191207-132701_155784056",
+      "dateCreated": "2019-12-07 13:27:01.403",
+      "dateStarted": "2019-12-07 14:06:49.105",
+      "dateFinished": "2019-12-07 14:06:49.224",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Turn CBO back to ON",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:14:44.891",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eTurn CBO back to ON\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575722741851_1350765765",
+      "id": "20191207-134541_1915421411",
+      "dateCreated": "2019-12-07 13:45:41.851",
+      "dateStarted": "2019-12-07 14:14:44.891",
+      "dateFinished": "2019-12-07 14:14:44.893",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.cbo.enabled\", true)\n\nspark.sql(\"refresh table users\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:49.434",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575722720317_2059329204",
+      "id": "20191207-134520_1530507366",
+      "dateCreated": "2019-12-07 13:45:20.317",
+      "dateStarted": "2019-12-07 14:06:49.455",
+      "dateFinished": "2019-12-07 14:06:49.562",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -797,7 +1149,7 @@
     {
       "text": "%md #### See column level stats\n\nHint\n* use DESC EXTENDED table_name, col_name",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:17.238",
+      "dateUpdated": "2019-12-07 14:14:48.073",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -820,20 +1172,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee column level stats\u003c/h4\u003e\n\u003cp\u003eHint\u003cbr/\u003e* use DESC EXTENDED table_name, col_name\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232044_-1248373820",
       "id": "paragraph_1575315277037_-1859781353",
       "dateCreated": "2019-12-06 07:20:32.044",
-      "dateStarted": "2019-12-06 07:24:17.262",
-      "dateFinished": "2019-12-06 07:24:17.266",
+      "dateStarted": "2019-12-07 14:14:48.073",
+      "dateFinished": "2019-12-07 14:14:48.076",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.sql(\"DESC EXTENDED users user_id\").show(50, 60)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:17.365",
+      "dateUpdated": "2019-12-07 14:06:49.783",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -858,8 +1218,8 @@
       "jobName": "paragraph_1575613232045_1592587747",
       "id": "paragraph_1575315292708_-1171760302",
       "dateCreated": "2019-12-06 07:20:32.045",
-      "dateStarted": "2019-12-06 07:24:17.387",
-      "dateFinished": "2019-12-06 07:24:17.664",
+      "dateStarted": "2019-12-07 14:06:49.804",
+      "dateFinished": "2019-12-07 14:06:49.947",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -867,7 +1227,7 @@
     {
       "text": "%md #### Compute column level stats\n\nHint:\n* use ANALYZE TABLE table_name COMPUTE STATISTICS FOR COLUMNS col_names",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:17.691",
+      "dateUpdated": "2019-12-07 14:14:53.288",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -890,20 +1250,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eCompute column level stats\u003c/h4\u003e\n\u003cp\u003eHint:\u003cbr/\u003e* use ANALYZE TABLE table_name COMPUTE STATISTICS FOR COLUMNS col_names\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232046_1548307236",
       "id": "paragraph_1575315308755_-1987522800",
       "dateCreated": "2019-12-06 07:20:32.046",
-      "dateStarted": "2019-12-06 07:24:17.719",
-      "dateFinished": "2019-12-06 07:24:17.723",
+      "dateStarted": "2019-12-07 14:14:53.288",
+      "dateFinished": "2019-12-07 14:14:53.290",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.sql(\"ANALYZE TABLE users COMPUTE STATISTICS FOR COLUMNS user_id, display_name\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:17.820",
+      "dateUpdated": "2019-12-07 14:06:50.131",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -928,8 +1296,8 @@
       "jobName": "paragraph_1575613232047_-13877108",
       "id": "paragraph_1575315331824_-1827861386",
       "dateCreated": "2019-12-06 07:20:32.047",
-      "dateStarted": "2019-12-06 07:24:17.840",
-      "dateFinished": "2019-12-06 07:24:19.204",
+      "dateStarted": "2019-12-07 14:06:50.153",
+      "dateFinished": "2019-12-07 14:06:50.967",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -937,7 +1305,7 @@
     {
       "text": "%md #### See the stats again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:19.262",
+      "dateUpdated": "2019-12-07 14:14:57.067",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -960,20 +1328,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the stats again\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232047_1699034843",
       "id": "paragraph_1575315350861_449754157",
       "dateCreated": "2019-12-06 07:20:32.048",
-      "dateStarted": "2019-12-06 07:24:19.310",
-      "dateFinished": "2019-12-06 07:24:19.319",
+      "dateStarted": "2019-12-07 14:14:57.067",
+      "dateFinished": "2019-12-07 14:14:57.072",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.sql(\"DESC EXTENDED users user_id\").show(30, 60)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:19.405",
+      "dateUpdated": "2019-12-07 14:06:51.113",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -998,8 +1374,8 @@
       "jobName": "paragraph_1575613232048_-1108852964",
       "id": "paragraph_1575315364829_1810478341",
       "dateCreated": "2019-12-06 07:20:32.048",
-      "dateStarted": "2019-12-06 07:24:19.435",
-      "dateFinished": "2019-12-06 07:24:19.660",
+      "dateStarted": "2019-12-07 14:06:51.135",
+      "dateFinished": "2019-12-07 14:06:51.262",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -1007,7 +1383,7 @@
     {
       "text": "spark.sql(\"EXPLAIN COST select * from users where user_id \u003c -1000\").show(30, false)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:25:35.978",
+      "dateUpdated": "2019-12-07 14:06:51.341",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -1029,8 +1405,8 @@
       "jobName": "paragraph_1575613531554_-1014572503",
       "id": "20191206-072531_704530750",
       "dateCreated": "2019-12-06 07:25:31.554",
-      "dateStarted": "2019-12-06 07:25:35.998",
-      "dateFinished": "2019-12-06 07:25:36.194",
+      "dateStarted": "2019-12-07 14:06:51.362",
+      "dateFinished": "2019-12-07 14:06:51.475",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -1038,7 +1414,7 @@
     {
       "text": "%md #### Compute the histogram for specific cols\n\nHint\n* Check if histogram is enabled\n* Enable if not\n* Compute column level stats again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:19.740",
+      "dateUpdated": "2019-12-07 14:06:51.569",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -1065,8 +1441,8 @@
       "jobName": "paragraph_1575613232049_1411716614",
       "id": "paragraph_1575315394248_-2039248615",
       "dateCreated": "2019-12-06 07:20:32.049",
-      "dateStarted": "2019-12-06 07:24:19.772",
-      "dateFinished": "2019-12-06 07:24:19.776",
+      "dateStarted": "2019-12-07 14:06:51.590",
+      "dateFinished": "2019-12-07 14:06:51.592",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -1074,7 +1450,7 @@
     {
       "text": "spark.conf.get(\"spark.sql.statistics.histogram.enabled\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:19.874",
+      "dateUpdated": "2019-12-07 14:06:51.693",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -1099,8 +1475,8 @@
       "jobName": "paragraph_1575613232050_2069075302",
       "id": "paragraph_1575315412599_1323001613",
       "dateCreated": "2019-12-06 07:20:32.050",
-      "dateStarted": "2019-12-06 07:24:19.894",
-      "dateFinished": "2019-12-06 07:24:20.014",
+      "dateStarted": "2019-12-07 14:06:51.713",
+      "dateFinished": "2019-12-07 14:06:51.788",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -1108,7 +1484,7 @@
     {
       "text": "spark.conf.set(\"spark.sql.statistics.histogram.enabled\", true)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:20.102",
+      "dateUpdated": "2019-12-07 14:06:51.815",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -1133,8 +1509,8 @@
       "jobName": "paragraph_1575613232051_2012709504",
       "id": "paragraph_1575315425269_-1721674807",
       "dateCreated": "2019-12-06 07:20:32.051",
-      "dateStarted": "2019-12-06 07:24:20.128",
-      "dateFinished": "2019-12-06 07:24:20.255",
+      "dateStarted": "2019-12-07 14:06:51.838",
+      "dateFinished": "2019-12-07 14:06:51.911",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -1142,7 +1518,7 @@
     {
       "text": "spark.sql(\"ANALYZE TABLE users COMPUTE STATISTICS FOR COLUMNS user_id\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:20.329",
+      "dateUpdated": "2019-12-07 14:06:51.943",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -1167,8 +1543,8 @@
       "jobName": "paragraph_1575613232052_-839733559",
       "id": "paragraph_1575315447660_-1039302333",
       "dateCreated": "2019-12-06 07:20:32.052",
-      "dateStarted": "2019-12-06 07:24:20.351",
-      "dateFinished": "2019-12-06 07:24:21.481",
+      "dateStarted": "2019-12-07 14:06:51.967",
+      "dateFinished": "2019-12-07 14:06:52.916",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -1176,7 +1552,7 @@
     {
       "text": "%md #### See the stats again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:21.577",
+      "dateUpdated": "2019-12-07 14:15:01.364",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -1199,20 +1575,28 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eSee the stats again\u003c/h4\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575613232053_1058442385",
       "id": "paragraph_1575315461735_-2141789712",
       "dateCreated": "2019-12-06 07:20:32.053",
-      "dateStarted": "2019-12-06 07:24:21.597",
-      "dateFinished": "2019-12-06 07:24:21.601",
+      "dateStarted": "2019-12-07 14:15:01.364",
+      "dateFinished": "2019-12-07 14:15:01.367",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "spark.sql(\"DESC EXTENDED users user_id\").show(20, 60)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:21.700",
+      "dateUpdated": "2019-12-07 14:06:53.121",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -1237,42 +1621,217 @@
       "jobName": "paragraph_1575613232054_152172695",
       "id": "paragraph_1575315474524_1196017264",
       "dateCreated": "2019-12-06 07:20:32.054",
-      "dateStarted": "2019-12-06 07:24:21.727",
-      "dateFinished": "2019-12-06 07:24:21.966",
+      "dateStarted": "2019-12-07 14:06:53.141",
+      "dateFinished": "2019-12-07 14:06:53.271",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "%md\n\n### Let\u0027s see what happens if the table is partitoned\n\n* use table usersp - it is partitioned  ",
       "user": "anonymous",
-      "dateUpdated": "2019-12-06 07:24:22.035",
+      "dateUpdated": "2019-12-07 14:15:20.765",
       "config": {
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eLet\u0026rsquo;s see what happens if the table is partitoned\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003euse table usersp - it is partitioned\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575613232055_542750779",
+      "id": "paragraph_1575403687493_1105472643",
+      "dateCreated": "2019-12-06 07:20:32.055",
+      "dateStarted": "2019-12-07 14:15:20.765",
+      "dateFinished": "2019-12-07 14:15:20.768",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// stats are not computed and Spark wants to take them from metastore\n// maximum value is used\n\nspark.sql(\"EXPLAIN COST select * from usersp where user_id \u003c -1000\").show(30, false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:15:25.799",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
         "editorSetting": {
           "language": "scala",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "fontSize": 9.0,
-        "results": {},
-        "enabled": true
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575613232055_542750779",
-      "id": "paragraph_1575403687493_1105472643",
-      "dateCreated": "2019-12-06 07:20:32.055",
+      "jobName": "paragraph_1575723152283_-1641526953",
+      "id": "20191207-135232_1351208387",
+      "dateCreated": "2019-12-07 13:52:32.283",
+      "dateStarted": "2019-12-07 14:06:53.489",
+      "dateFinished": "2019-12-07 14:06:53.628",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### change defaultSizeInBytes config",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:15:26.568",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003echange defaultSizeInBytes config\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575723957177_-1243793593",
+      "id": "20191207-140557_909006797",
+      "dateCreated": "2019-12-07 14:05:57.178",
+      "dateStarted": "2019-12-07 14:15:26.568",
+      "dateFinished": "2019-12-07 14:15:26.570",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.defaultSizeInBytes\", 2 * 1024  * 1024 * 1024L)\n\nspark.sql(\"refresh table usersp\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:53.814",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575723195138_180572562",
+      "id": "20191207-135315_50659264",
+      "dateCreated": "2019-12-07 13:53:15.138",
+      "dateStarted": "2019-12-07 14:06:53.839",
+      "dateFinished": "2019-12-07 14:06:53.975",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"EXPLAIN COST select * from usersp where user_id \u003c -1000\").show(30, false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:54.045",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575723760355_1587363187",
+      "id": "20191207-140240_1294641584",
+      "dateCreated": "2019-12-07 14:02:40.356",
+      "dateStarted": "2019-12-07 14:06:54.069",
+      "dateFinished": "2019-12-07 14:06:54.458",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 14:06:54.474",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575723767652_-615945254",
+      "id": "20191207-140247_1478976337",
+      "dateCreated": "2019-12-07 14:02:47.652",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "solutions/cbo/cbo-II",
+  "name": "solutions/cbo/cbo-I",
   "id": "2EUT3CJ3P",
   "noteParams": {},
   "noteForms": {},
