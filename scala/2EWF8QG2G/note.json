@@ -1,0 +1,110 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n## Task I\n\u003cbr/\u003e\n* Data is partitioned by last 2 digits of user_id column\n* Compute how many users are in partition 05 and 06\n* path to the data is given bellow, format is parquet",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:17:31.531",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eTask I\u003c/h2\u003e\n\u003cbr/\u003e\n\u003cul\u003e\n  \u003cli\u003eData is partitioned by last 2 digits of user_id column\u003c/li\u003e\n  \u003cli\u003eCompute how many users are in partition 05 and 06\u003c/li\u003e\n  \u003cli\u003epath to the data is given bellow, format is parquet\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575728251531_1102025708",
+      "id": "20191207-071227_1223575752",
+      "dateCreated": "2019-12-07 15:17:31.531",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dataPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersp\"",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:17:31.531",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "dataPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersp\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575728251531_-1491709725",
+      "id": "20191207-071310_790129790",
+      "dateCreated": "2019-12-07 15:17:31.531",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:17:31.533",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575728251533_716404031",
+      "id": "20191207-151059_232177933",
+      "dateCreated": "2019-12-07 15:17:31.533",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "assignments/physical-planning/physical-plans-I",
+  "id": "2EWF8QG2G",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

@@ -28,18 +28,16 @@
     },
     {
       "user": "anonymous",
-      "dateUpdated": "2019-12-04 21:41:02.858",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575492062858_-738695639",
-      "id": "paragraph_1575474196400_-626467682",
-      "dateCreated": "2019-12-04 21:41:02.858",
+      "jobName": "paragraph_1575727865631_-526700055",
+      "id": "20191207-151105_652994629",
+      "dateCreated": "2019-12-07 15:11:05.631",
       "status": "READY",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
@@ -48,6 +46,7 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
+    "md:shared_process": [],
     "spark:shared_process": []
   },
   "config": {
