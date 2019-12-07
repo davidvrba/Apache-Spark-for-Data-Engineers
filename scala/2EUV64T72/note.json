@@ -3,7 +3,7 @@
     {
       "text": "%md\n\n## Task I\n\u003cbr/\u003e\n* run the query belllow\n* see the query plan and find out what is not optimal\n* try to optimize it",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:17:57.600",
+      "dateUpdated": "2019-12-07 15:23:22.418",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -36,8 +36,8 @@
       "jobName": "paragraph_1575701829670_629199471",
       "id": "20191207-075709_342507840",
       "dateCreated": "2019-12-07 07:57:09.670",
-      "dateStarted": "2019-12-07 08:17:57.600",
-      "dateFinished": "2019-12-07 08:17:57.606",
+      "dateStarted": "2019-12-07 15:23:22.418",
+      "dateFinished": "2019-12-07 15:23:22.423",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -62,15 +62,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "users: org.apache.spark.sql.DataFrame \u003d [user_id: bigint, display_name: string ... 5 more fields]\nquestions: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, tags: array\u003cstring\u003e ... 6 more fields]\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575701851824_858596054",
       "id": "20191207-075731_939513927",
@@ -78,6 +69,7 @@
       "dateStarted": "2019-12-07 08:08:27.036",
       "dateFinished": "2019-12-07 08:08:27.209",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -101,10 +93,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": []
-      },
       "apps": [],
       "jobName": "paragraph_1575702495343_1019786234",
       "id": "20191207-080815_1856964662",
@@ -112,12 +100,13 @@
       "dateStarted": "2019-12-07 08:08:46.370",
       "dateFinished": "2019-12-07 08:08:46.487",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### There are 3 shuffles\n* see explain",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:09:14.494",
+      "dateUpdated": "2019-12-07 15:23:37.072",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -150,15 +139,15 @@
       "jobName": "paragraph_1575702526360_1548636834",
       "id": "20191207-080846_139105374",
       "dateCreated": "2019-12-07 08:08:46.361",
-      "dateStarted": "2019-12-07 08:09:14.494",
-      "dateFinished": "2019-12-07 08:09:14.499",
+      "dateStarted": "2019-12-07 15:23:37.072",
+      "dateFinished": "2019-12-07 15:23:37.075",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val num_questions \u003d questions\n  .groupBy(\"user_id\")\n  .agg(\n    count(\"*\").alias(\"n\")\n  )\n\n\n\nusers\n  .join(num_questions, \"user_id\")\n  .explain()",
+      "text": "val num_questions \u003d questions\n  .groupBy(\"user_id\")\n  .agg(\n    count(\"*\").alias(\"n\")\n  )\n\n\nusers\n  .join(num_questions, \"user_id\")\n  .explain()",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:10:26.369",
+      "dateUpdated": "2019-12-07 15:23:46.788",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -176,15 +165,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(6) Project [user_id#373L, display_name#374, location#375, downvotes#376L, upvotes#377L, reputation#378L, views#379L, n#413L]\n+- *(6) SortMergeJoin [user_id#373L], [cast(user_id#393 as bigint)], Inner\n   :- *(2) Sort [user_id#373L ASC NULLS FIRST], false, 0\n   :  +- Exchange hashpartitioning(user_id#373L, 200)\n   :     +- *(1) Project [user_id#373L, display_name#374, location#375, downvotes#376L, upvotes#377L, reputation#378L, views#379L]\n   :        +- *(1) Filter isnotnull(user_id#373L)\n   :           +- *(1) FileScan parquet default.usersb[user_id#373L,display_name#374,location#375,downvotes#376L,upvotes#377L,reputation#378L,views#379L] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionFilters: [], PushedFilters: [IsNotNull(user_id)], ReadSchema: struct\u003cuser_id:bigint,display_name:string,location:string,downvotes:bigint,upvotes:bigint,reputat..., SelectedBucketsCount: 20 out of 20\n   +- *(5) Sort [cast(user_id#393 as bigint) ASC NULLS FIRST], false, 0\n      +- Exchange hashpartitioning(cast(user_id#393 as bigint), 200)\n         +- *(4) HashAggregate(keys\u003d[user_id#393], functions\u003d[count(1)])\n            +- Exchange hashpartitioning(user_id#393, 200)\n               +- *(3) HashAggregate(keys\u003d[user_id#393], functions\u003d[partial_count(1)])\n                  +- *(3) Project [user_id#393]\n                     +- *(3) Filter isnotnull(user_id#393)\n                        +- *(3) FileScan parquet default.questionsa[user_id#393] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/q..., PartitionFilters: [], PushedFilters: [IsNotNull(user_id)], ReadSchema: struct\u003cuser_id:int\u003e\nnum_questions: org.apache.spark.sql.DataFrame \u003d [user_id: int, n: bigint]\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575702554484_282557360",
       "id": "20191207-080914_1078047020",
@@ -192,12 +172,13 @@
       "dateStarted": "2019-12-07 08:10:26.381",
       "dateFinished": "2019-12-07 08:10:26.819",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### Set number of shuffle partitions\n* use number of buckets",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:10:45.200",
+      "dateUpdated": "2019-12-07 15:23:47.721",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -230,8 +211,8 @@
       "jobName": "paragraph_1575702626370_414482420",
       "id": "20191207-081026_1941489018",
       "dateCreated": "2019-12-07 08:10:26.370",
-      "dateStarted": "2019-12-07 08:10:45.200",
-      "dateFinished": "2019-12-07 08:10:45.205",
+      "dateStarted": "2019-12-07 15:23:47.722",
+      "dateFinished": "2019-12-07 15:23:47.724",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -256,15 +237,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "+--------------------+--------------------+-------+\n|            col_name|           data_type|comment|\n+--------------------+--------------------+-------+\n|             user_id|              bigint|   null|\n|        display_name|              string|   null|\n|            location|              string|   null|\n|           downvotes|              bigint|   null|\n|             upvotes|              bigint|   null|\n|          reputation|              bigint|   null|\n|               views|              bigint|   null|\n|                    |                    |       |\n|# Detailed Table ...|                    |       |\n|            Database|             default|       |\n|               Table|              usersb|       |\n|               Owner|          david.vrba|       |\n|        Created Time|Sat Dec 07 08:04:...|       |\n|         Last Access|Thu Jan 01 01:00:...|       |\n|          Created By|         Spark 2.4.4|       |\n|                Type|            EXTERNAL|       |\n|            Provider|             parquet|       |\n|         Num Buckets|                  20|       |\n|      Bucket Columns|         [`user_id`]|       |\n|        Sort Columns|                  []|       |\n+--------------------+--------------------+-------+\nonly showing top 20 rows\n\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575702836959_-2015721861",
       "id": "20191207-081356_110558878",
@@ -272,6 +244,7 @@
       "dateStarted": "2019-12-07 08:14:15.371",
       "dateFinished": "2019-12-07 08:14:15.645",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -300,12 +273,13 @@
       "id": "20191207-081045_336321193",
       "dateCreated": "2019-12-07 08:10:45.188",
       "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### make sure datatypes are correct\n* user_id in questions has integer type while in users it is long type\n* make explicit cast in questions to eliminate the shuffle",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:11:20.776",
+      "dateUpdated": "2019-12-07 15:23:51.002",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -338,8 +312,8 @@
       "jobName": "paragraph_1575702676699_1427858380",
       "id": "20191207-081116_824294846",
       "dateCreated": "2019-12-07 08:11:16.699",
-      "dateStarted": "2019-12-07 08:11:20.776",
-      "dateFinished": "2019-12-07 08:11:20.783",
+      "dateStarted": "2019-12-07 15:23:51.002",
+      "dateFinished": "2019-12-07 15:23:51.005",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -364,15 +338,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "root\n |-- user_id: long (nullable \u003d true)\n |-- display_name: string (nullable \u003d true)\n |-- location: string (nullable \u003d true)\n |-- downvotes: long (nullable \u003d true)\n |-- upvotes: long (nullable \u003d true)\n |-- reputation: long (nullable \u003d true)\n |-- views: long (nullable \u003d true)\n\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575702680764_1588751071",
       "id": "20191207-081120_578463443",
@@ -380,6 +345,7 @@
       "dateStarted": "2019-12-07 08:11:34.596",
       "dateFinished": "2019-12-07 08:11:34.716",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -403,15 +369,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "root\n |-- question_id: long (nullable \u003d true)\n |-- tags: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- creation_date: timestamp (nullable \u003d true)\n |-- title: string (nullable \u003d true)\n |-- accepted_answer_id: long (nullable \u003d true)\n |-- comments: long (nullable \u003d true)\n |-- user_id: integer (nullable \u003d true)\n |-- views: long (nullable \u003d true)\n\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575702694584_-1764274392",
       "id": "20191207-081134_178717695",
@@ -419,6 +376,7 @@
       "dateStarted": "2019-12-07 08:13:15.866",
       "dateFinished": "2019-12-07 08:13:15.987",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -442,15 +400,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "num_questions: org.apache.spark.sql.DataFrame \u003d [user_id: bigint, n: bigint]\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575702795847_-1623991723",
       "id": "20191207-081315_997072870",
@@ -458,6 +407,7 @@
       "dateStarted": "2019-12-07 08:15:42.154",
       "dateFinished": "2019-12-07 08:15:42.397",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -481,15 +431,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(4) Project [user_id#373L, display_name#374, location#375, downvotes#376L, upvotes#377L, reputation#378L, views#379L, n#468L]\n+- *(4) SortMergeJoin [user_id#373L], [user_id#449L], Inner\n   :- *(1) Sort [user_id#373L ASC NULLS FIRST], false, 0\n   :  +- *(1) Project [user_id#373L, display_name#374, location#375, downvotes#376L, upvotes#377L, reputation#378L, views#379L]\n   :     +- *(1) Filter isnotnull(user_id#373L)\n   :        +- *(1) FileScan parquet default.usersb[user_id#373L,display_name#374,location#375,downvotes#376L,upvotes#377L,reputation#378L,views#379L] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionFilters: [], PushedFilters: [IsNotNull(user_id)], ReadSchema: struct\u003cuser_id:bigint,display_name:string,location:string,downvotes:bigint,upvotes:bigint,reputat..., SelectedBucketsCount: 20 out of 20\n   +- *(3) Sort [user_id#449L ASC NULLS FIRST], false, 0\n      +- *(3) HashAggregate(keys\u003d[user_id#449L], functions\u003d[count(1)])\n         +- *(3) HashAggregate(keys\u003d[user_id#449L], functions\u003d[partial_count(1)])\n            +- Exchange hashpartitioning(user_id#449L, 20)\n               +- *(2) Project [cast(user_id#393 as bigint) AS user_id#449L]\n                  +- *(2) Filter isnotnull(cast(user_id#393 as bigint))\n                     +- *(2) FileScan parquet default.questionsa[user_id#393] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/q..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct\u003cuser_id:int\u003e\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575702936998_1142809394",
       "id": "20191207-081536_720597332",
@@ -497,6 +438,7 @@
       "dateStarted": "2019-12-07 08:17:17.969",
       "dateFinished": "2019-12-07 08:17:18.192",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -511,6 +453,7 @@
       "id": "20191207-081717_1281180665",
       "dateCreated": "2019-12-07 08:17:17.953",
       "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
