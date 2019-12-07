@@ -3,9 +3,9 @@
     {
       "text": "%md\n\n### Implement optimization rule\n* implement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\n* add the rule to Catalyst\n* see its impact in the plan",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:24.880",
+      "dateUpdated": "2019-12-07 11:12:29.537",
       "config": {
-        "tableHide": true,
+        "tableHide": false,
         "editorSetting": {
           "language": "markdown",
           "editOnDblClick": true,
@@ -15,7 +15,7 @@
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
         "fontSize": 9.0,
-        "editorHide": false,
+        "editorHide": true,
         "results": {},
         "enabled": true
       },
@@ -23,12 +23,22 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eImplement optimization rule\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eimplement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\u003c/li\u003e\n  \u003cli\u003eadd the rule to Catalyst\u003c/li\u003e\n  \u003cli\u003esee its impact in the plan\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
       "apps": [],
       "jobName": "paragraph_1575711320937_1403329426",
       "id": "20191207-102752_1858665541",
       "dateCreated": "2019-12-07 10:35:20.937",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2019-12-07 11:12:29.538",
+      "dateFinished": "2019-12-07 11:12:29.543",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {

@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n### Implement optimization rule\n* implement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\n* add the rule to Catalyst\n* see its impact in the plan",
+      "text": "%md\n\n### Catalyst API\n* implement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\n* add the rule to Catalyst\n* see its impact in the plan",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:29:53.869",
+      "dateUpdated": "2019-12-07 12:00:31.250",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -28,7 +28,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eImplement optimization rule\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eimplement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\u003c/li\u003e\n  \u003cli\u003eadd the rule to Catalyst\u003c/li\u003e\n  \u003cli\u003esee its impact in the plan\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eCatalyst API\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eimplement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\u003c/li\u003e\n  \u003cli\u003eadd the rule to Catalyst\u003c/li\u003e\n  \u003cli\u003esee its impact in the plan\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -36,15 +36,15 @@
       "jobName": "paragraph_1575710872611_-707115463",
       "id": "20191207-102752_1858665541",
       "dateCreated": "2019-12-07 10:27:52.611",
-      "dateStarted": "2019-12-07 10:29:53.870",
-      "dateFinished": "2019-12-07 10:29:53.876",
+      "dateStarted": "2019-12-07 12:00:31.251",
+      "dateFinished": "2019-12-07 12:00:31.258",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.sql.catalyst.expressions.{CaseWhen, If, Literal}\nimport org.apache.spark.sql.catalyst.plans.logical.LogicalPlan\nimport org.apache.spark.sql.catalyst.rules.Rule",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:18:45.545",
+      "dateUpdated": "2019-12-07 12:00:34.466",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -75,15 +75,15 @@
       "jobName": "paragraph_1575710148034_-1096438989",
       "id": "20191207-101548_1804278861",
       "dateCreated": "2019-12-07 10:15:48.034",
-      "dateStarted": "2019-12-07 10:18:45.553",
-      "dateFinished": "2019-12-07 10:18:45.686",
+      "dateStarted": "2019-12-07 12:00:34.488",
+      "dateFinished": "2019-12-07 12:00:34.696",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val usersDF \u003d spark.table(\"users\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:20:26.265",
+      "dateUpdated": "2019-12-07 12:00:38.121",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -114,8 +114,125 @@
       "jobName": "paragraph_1575710414972_-191022885",
       "id": "20191207-102014_1333979185",
       "dateCreated": "2019-12-07 10:20:14.972",
-      "dateStarted": "2019-12-07 10:20:26.275",
-      "dateFinished": "2019-12-07 10:20:26.485",
+      "dateStarted": "2019-12-07 12:00:38.139",
+      "dateFinished": "2019-12-07 12:00:38.338",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "usersDF.orderBy($\"user_id\".desc, $\"views\").queryExecution.optimizedPlan.expressions(1).numberedTreeString //.foreach{x \u003d\u003e println(x.nodeName)}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 12:07:50.709",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res87: String \u003d\n00 views#41L ASC NULLS FIRST\n01 +- views#41: bigint\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575716440231_93968967",
+      "id": "20191207-120040_2117583584",
+      "dateCreated": "2019-12-07 12:00:40.232",
+      "dateStarted": "2019-12-07 12:07:50.723",
+      "dateFinished": "2019-12-07 12:07:50.888",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "usersDF.orderBy($\"user_id\".desc, $\"views\").queryExecution.optimizedPlan",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 12:08:24.070",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res88: org.apache.spark.sql.catalyst.plans.logical.LogicalPlan \u003d\nSort [user_id#35L DESC NULLS LAST, views#41L ASC NULLS FIRST], true\n+- Relation[user_id#35L,display_name#36,location#37,downvotes#38L,upvotes#39L,reputation#40L,views#41L] parquet\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575716887855_1935559032",
+      "id": "20191207-120807_889485082",
+      "dateCreated": "2019-12-07 12:08:07.855",
+      "dateStarted": "2019-12-07 12:08:24.089",
+      "dateFinished": "2019-12-07 12:08:24.259",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "usersDF.show(false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 11:13:32.498",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------------------+------------------------------+---------+-------+----------+-----+\n|user_id|display_name      |location                      |downvotes|upvotes|reputation|views|\n+-------+------------------+------------------------------+---------+-------+----------+-----+\n|335    |dagorym           |Spanish Fork, UT              |0        |3      |5917      |185  |\n|11309  |Paul Dirac        |Norway                        |0        |0      |1         |0    |\n|127339 |Nur Bedeir        |null                          |0        |0      |18        |26   |\n|176921 |bihu ghosh        |null                          |0        |0      |1         |15   |\n|75953  |Toadfish          |Melbourne, Victoria, Australia|0        |16     |151       |3    |\n|186122 |KariK             |null                          |0        |0      |11        |0    |\n|209527 |Nmeso Okere       |null                          |0        |0      |1         |0    |\n|133425 |Irfan434          |null                          |0        |9      |101       |0    |\n|157313 |Gundapu Jai Charan|null                          |0        |0      |1         |0    |\n|7601   |aelguindy         |Zürich, Switzerland           |0        |6      |101       |0    |\n|11644  |Gino              |Santa Barbara, CA             |0        |4      |40        |1    |\n|122094 |David Olivieri    |null                          |0        |0      |1         |0    |\n|164397 |user153615        |null                          |0        |0      |1         |0    |\n|208881 |Utkarsh Varshney  |null                          |0        |0      |1         |0    |\n|34685  |JCLL              |null                          |0        |1      |101       |0    |\n|85363  |DrMuRdAa da don   |null                          |0        |0      |1         |0    |\n|20271  |NirmalL           |Sri Lanka                     |0        |0      |1         |0    |\n|100042 |Edward Rixon      |null                          |0        |2      |101       |1    |\n|140083 |manowz            |null                          |0        |0      |1         |0    |\n|142925 |Naveen            |null                          |0        |0      |1         |0    |\n+-------+------------------+------------------------------+---------+-------+----------+-----+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575713595501_-718667657",
+      "id": "20191207-111315_475893178",
+      "dateCreated": "2019-12-07 11:13:15.501",
+      "dateStarted": "2019-12-07 11:13:32.517",
+      "dateFinished": "2019-12-07 11:13:32.715",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -142,15 +259,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eUse the following trnasformation\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575710998041_920365894",
       "id": "20191207-102958_1632313925",
@@ -158,6 +266,7 @@
       "dateStarted": "2019-12-07 10:30:13.590",
       "dateFinished": "2019-12-07 10:30:13.593",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -181,15 +290,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "transformed: org.apache.spark.sql.DataFrame \u003d [skill: string]\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575710355445_-1953505417",
       "id": "20191207-101915_1245706252",
@@ -197,6 +297,7 @@
       "dateStarted": "2019-12-07 10:22:14.073",
       "dateFinished": "2019-12-07 10:22:14.274",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -220,15 +321,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(1) Project [CASE WHEN (reputation#40L \u003e 1000) THEN advanced ELSE basic END AS skill#1175]\n+- *(1) FileScan parquet default.users[reputation#40L] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct\u003creputation:bigint\u003e\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575710479984_-118212728",
       "id": "20191207-102119_1729436231",
@@ -236,6 +328,7 @@
       "dateStarted": "2019-12-07 10:22:16.854",
       "dateFinished": "2019-12-07 10:22:16.983",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -261,15 +354,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eImplement the rule\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575711025278_-1856442216",
       "id": "20191207-103025_437733267",
@@ -277,6 +361,7 @@
       "dateStarted": "2019-12-07 10:30:39.517",
       "dateFinished": "2019-12-07 10:30:39.520",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -300,15 +385,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "defined object ConvertWhenToIf\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575709480228_-454316014",
       "id": "20191207-100440_1151312017",
@@ -316,6 +392,7 @@
       "dateStarted": "2019-12-07 10:26:32.921",
       "dateFinished": "2019-12-07 10:26:33.680",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -341,15 +418,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eRegister the rule\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575711104818_1232826394",
       "id": "20191207-103144_807533642",
@@ -357,6 +425,7 @@
       "dateStarted": "2019-12-07 10:31:53.223",
       "dateFinished": "2019-12-07 10:31:53.226",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -380,15 +449,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "spark.experimental.extraOptimizations: Seq[org.apache.spark.sql.catalyst.rules.Rule[org.apache.spark.sql.catalyst.plans.logical.LogicalPlan]] \u003d List(ConvertWhenToIf$@94e6717)\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575710208120_-1024963161",
       "id": "20191207-101648_1144755160",
@@ -396,6 +456,7 @@
       "dateStarted": "2019-12-07 10:26:49.234",
       "dateFinished": "2019-12-07 10:26:49.513",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -421,15 +482,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eRun the query again\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575711118051_-775796672",
       "id": "20191207-103158_384107018",
@@ -437,6 +489,7 @@
       "dateStarted": "2019-12-07 10:32:11.232",
       "dateFinished": "2019-12-07 10:32:11.235",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -460,15 +513,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "transformedWithRule: org.apache.spark.sql.DataFrame \u003d [skill: string]\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575710809222_1998503340",
       "id": "20191207-102649_764867750",
@@ -476,6 +520,7 @@
       "dateStarted": "2019-12-07 10:27:17.038",
       "dateFinished": "2019-12-07 10:27:17.285",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -501,15 +546,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eSee the plan again\u003c/h3\u003e\n\u003c/div\u003e"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575711133119_610370783",
       "id": "20191207-103213_2090894607",
@@ -517,6 +553,7 @@
       "dateStarted": "2019-12-07 10:32:19.170",
       "dateFinished": "2019-12-07 10:32:19.173",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -540,15 +577,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(1) Project [if ((reputation#40L \u003e 1000)) advanced else basic AS skill#1186]\n+- *(1) FileScan parquet default.users[reputation#40L] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct\u003creputation:bigint\u003e\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575710837027_-2110138855",
       "id": "20191207-102717_1963385060",
@@ -556,6 +584,7 @@
       "dateStarted": "2019-12-07 10:27:25.385",
       "dateFinished": "2019-12-07 10:27:25.603",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -570,10 +599,11 @@
       "id": "20191207-102725_867881392",
       "dateCreated": "2019-12-07 10:27:25.371",
       "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "solutions/logical-planning/logical-plans-I",
+  "name": "~Trash/solutions/logical-planning/logical-plans-I",
   "id": "2EWCV7HVT",
   "noteParams": {},
   "noteForms": {},
