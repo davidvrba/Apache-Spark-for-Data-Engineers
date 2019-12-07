@@ -1,0 +1,266 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n# To each question choose only answers with maximal score\n\n* work with answers dataset\n* output:\n * all columns of answers\n * rows are filtered: for each question we want only answers that have maximal score\n \n### Implement the solution using two different ways and discuss/compare their performance\n* using groupBy + join\n* using window\n* try to optimize it if possible",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:34:55.402",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eTo each question choose only answers with maximal score\u003c/h1\u003e\n\u003cul\u003e\n  \u003cli\u003ework with answers dataset\u003c/li\u003e\n  \u003cli\u003eoutput:\u003c/li\u003e\n  \u003cli\u003eall columns of answers\u003c/li\u003e\n  \u003cli\u003erows are filtered: for each question we want only answers that have maximal score\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eImplement the solution using two different ways and discuss/compare their performance\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eusing groupBy + join\u003c/li\u003e\n  \u003cli\u003eusing window\u003c/li\u003e\n  \u003cli\u003etry to optimize it if possible\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729295402_-1644720217",
+      "id": "20191207-085522_1508496532",
+      "dateCreated": "2019-12-07 15:34:55.402",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.expressions.{Window}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:34:55.403",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729295402_108109924",
+      "id": "20191207-090340_155339565",
+      "dateCreated": "2019-12-07 15:34:55.403",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val answersDF \u003d spark.table(\"answers\") ",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:34:55.403",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729295403_2018244166",
+      "id": "20191207-090029_1571508997",
+      "dateCreated": "2019-12-07 15:34:55.403",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### 1) Use groupBy + Join",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:34:55.403",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e1) Use groupBy + Join\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729295403_-875732937",
+      "id": "20191207-085554_1792324951",
+      "dateCreated": "2019-12-07 15:34:55.403",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// your code here:",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:35:33.177",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729324603_1158288067",
+      "id": "20191207-153524_55771837",
+      "dateCreated": "2019-12-07 15:35:24.603",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### 2) Use Window",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:34:55.403",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e2) Use Window\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729295403_-432676542",
+      "id": "20191207-085638_1662206266",
+      "dateCreated": "2019-12-07 15:34:55.403",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// your code here:",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:35:46.616",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729333253_-235248767",
+      "id": "20191207-153533_1489566648",
+      "dateCreated": "2019-12-07 15:35:33.253",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 15:34:55.404",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575729295404_-834290950",
+      "id": "20191207-090636_702298268",
+      "dateCreated": "2019-12-07 15:34:55.404",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "assignments/physical-planning/physical-plans-IV",
+  "id": "2EX4UMPCX",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
