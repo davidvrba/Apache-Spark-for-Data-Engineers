@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "val usersPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\"\nval questionsPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\"\n\nval usersOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\"\n\nval usersOutputPathP \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\"\n\nval usersOutputPathB \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\"\n\nval questionsOutputPathA \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questionsB\"\n\nval questionsOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questions\"",
+      "text": "val usersPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\"\nval questionsPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\"\nval answersPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/answers\"\n\nval usersOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\"\n\nval usersOutputPathP \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\"\n\nval usersOutputPathB \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\"\n\nval questionsOutputPathA \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questionsB\"\n\nval questionsOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questions\"\n\nval answersOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/answers\"",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:07:30.932",
+      "dateUpdated": "2019-12-07 08:25:21.036",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -26,7 +26,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "usersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\nquestionsPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\nusersOutputPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\nusersOutputPathP: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\nusersOutputPathB: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\nquestionsOutputPathA: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questionsB\nquestionsOutputPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questions\n"
+            "data": "usersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\nquestionsPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\nanswersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/answers\nusersOutputPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\nusersOutputPathP: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\nusersOutputPathB: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\nquestionsOutputPathA: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questionsB\nquestionsOutputPath: String \u003d /Users/david.vrba/spark-traini..."
           }
         ]
       },
@@ -34,8 +34,8 @@
       "jobName": "paragraph_1575700164519_1655730637",
       "id": "20191207-072924_1750880852",
       "dateCreated": "2019-12-07 07:29:24.519",
-      "dateStarted": "2019-12-07 08:07:30.944",
-      "dateFinished": "2019-12-07 08:07:31.080",
+      "dateStarted": "2019-12-07 08:25:21.050",
+      "dateFinished": "2019-12-07 08:25:21.193",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -210,6 +210,40 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "spark.read.parquet(answersPath)\n  .repartition(8)\n  .write\n  .mode(\"overwrite\")\n  .option(\"path\", answersOutputPath)\n  .saveAsTable(\"answers\")\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 08:26:19.798",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1575702296285_-794071048",
+      "id": "20191207-080456_2096368238",
+      "dateCreated": "2019-12-07 08:04:56.285",
+      "dateStarted": "2019-12-07 08:26:19.813",
+      "dateFinished": "2019-12-07 08:26:20.564",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "user": "anonymous",
       "config": {},
       "settings": {
@@ -217,9 +251,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575702296285_-794071048",
-      "id": "20191207-080456_2096368238",
-      "dateCreated": "2019-12-07 08:04:56.285",
+      "jobName": "paragraph_1575703579798_-2077917764",
+      "id": "20191207-082619_2126946651",
+      "dateCreated": "2019-12-07 08:26:19.798",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
