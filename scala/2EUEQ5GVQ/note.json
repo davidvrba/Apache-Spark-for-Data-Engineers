@@ -1,0 +1,586 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n### Motivation example for understanding Catalyst\n\u003cbr\u003e\n* first two transformations work fine\n* the last transformation fails\n* Why?",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:33.597",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eMotivation example for understanding Catalyst\u003c/h3\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003efirst two transformations work fine\u003c/li\u003e\n  \u003cli\u003ethe last transformation fails\u003c/li\u003e\n  \u003cli\u003eWhy?\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712245395_-1055466555",
+      "id": "20191207-105045_299322843",
+      "dateCreated": "2019-12-07 10:50:45.395",
+      "dateStarted": "2019-12-07 10:51:33.617",
+      "dateFinished": "2019-12-07 10:51:33.621",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.{lit, col, desc}",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:33.719",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions.{lit, col, desc}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711777445_-10967834",
+      "id": "20191207-104257_1451076582",
+      "dateCreated": "2019-12-07 10:42:57.445",
+      "dateStarted": "2019-12-07 10:51:33.737",
+      "dateFinished": "2019-12-07 10:51:33.835",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d spark.range(10)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:33.838",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "df: org.apache.spark.sql.Dataset[Long] \u003d [id: bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711794090_-1614845856",
+      "id": "20191207-104314_2010636911",
+      "dateCreated": "2019-12-07 10:43:14.091",
+      "dateStarted": "2019-12-07 10:51:33.855",
+      "dateFinished": "2019-12-07 10:51:33.992",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:34.059",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+\n| id|\n+---+\n|  0|\n|  1|\n|  2|\n|  3|\n|  4|\n|  5|\n|  6|\n|  7|\n|  8|\n|  9|\n+---+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711806483_-2090864457",
+      "id": "20191207-104326_598771100",
+      "dateCreated": "2019-12-07 10:43:26.483",
+      "dateStarted": "2019-12-07 10:51:34.072",
+      "dateFinished": "2019-12-07 10:51:34.257",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n#### Add one column by adding 1\n\u003cbr\u003e\n* the default name of the column will be (id + 1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:34.274",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch4\u003eAdd one column by adding 1\u003c/h4\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003ethe default name of the column will be (id + 1)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712269020_390646164",
+      "id": "20191207-105109_824067839",
+      "dateCreated": "2019-12-07 10:51:09.020",
+      "dateStarted": "2019-12-07 10:51:34.288",
+      "dateFinished": "2019-12-07 10:51:34.291",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val newDF \u003d df.select($\"id\" + lit(1))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:34.389",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "newDF: org.apache.spark.sql.DataFrame \u003d [(id + 1): bigint]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711820573_1981316768",
+      "id": "20191207-104340_1090283433",
+      "dateCreated": "2019-12-07 10:43:40.573",
+      "dateStarted": "2019-12-07 10:51:34.400",
+      "dateFinished": "2019-12-07 10:51:34.559",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newDF.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:34.605",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- (id + 1): long (nullable \u003d false)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711847908_-132281858",
+      "id": "20191207-104407_1764402538",
+      "dateCreated": "2019-12-07 10:44:07.908",
+      "dateStarted": "2019-12-07 10:51:34.613",
+      "dateFinished": "2019-12-07 10:51:34.706",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newDF.show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:34.714",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+\n|(id + 1)|\n+--------+\n|       1|\n|       2|\n|       3|\n|       4|\n|       5|\n|       6|\n|       7|\n|       8|\n|       9|\n|      10|\n+--------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711859608_-1504311913",
+      "id": "20191207-104419_1571137222",
+      "dateCreated": "2019-12-07 10:44:19.608",
+      "dateStarted": "2019-12-07 10:51:34.727",
+      "dateFinished": "2019-12-07 10:51:34.905",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Apply filter on the id column\n\u003cbr\u003e\n* Note that the column is not contained in the dataframe\n* Yet the filter works",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:34.929",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eApply filter on the id column\u003c/h3\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003eNote that the column is not contained in the dataframe\u003c/li\u003e\n  \u003cli\u003eYet the filter works\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575711873101_-1768292243",
+      "id": "20191207-104433_944892035",
+      "dateCreated": "2019-12-07 10:44:33.101",
+      "dateStarted": "2019-12-07 10:51:34.941",
+      "dateFinished": "2019-12-07 10:51:34.944",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newDF.filter($\"id\" \u003e 5).show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:35.041",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+\n|(id + 1)|\n+--------+\n|       7|\n|       8|\n|       9|\n|      10|\n+--------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712054209_-1068586045",
+      "id": "20191207-104734_1241804332",
+      "dateCreated": "2019-12-07 10:47:34.209",
+      "dateStarted": "2019-12-07 10:51:35.052",
+      "dateFinished": "2019-12-07 10:51:35.284",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Apply sort by the id column\n\u003cbr\u003e\n* it still works, even though the column is not contained in the dataframe",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:35.352",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eApply sort by the id column\u003c/h3\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003eit still works, even though the column is not contained in the dataframe\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712069309_-886400286",
+      "id": "20191207-104749_589166974",
+      "dateCreated": "2019-12-07 10:47:49.309",
+      "dateStarted": "2019-12-07 10:51:35.362",
+      "dateFinished": "2019-12-07 10:51:35.365",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newDF.orderBy(desc(\"id\")).show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:35.463",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+\n|(id + 1)|\n+--------+\n|      10|\n|       9|\n|       8|\n|       7|\n|       6|\n|       5|\n|       4|\n|       3|\n|       2|\n|       1|\n+--------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712085088_-1323657628",
+      "id": "20191207-104805_1872231727",
+      "dateCreated": "2019-12-07 10:48:05.089",
+      "dateStarted": "2019-12-07 10:51:35.473",
+      "dateFinished": "2019-12-07 10:51:35.656",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Do one more transformation\n\u003cbr\u003e\n* add new column\n* it no longer works\n* it fails on AnalysisException",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:35.679",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eDo one more transformation\u003c/h3\u003e\n\u003cbr\u003e\n\u003cul\u003e\n  \u003cli\u003eadd new column\u003c/li\u003e\n  \u003cli\u003eit no longer works\u003c/li\u003e\n  \u003cli\u003eit fails on AnalysisException\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712102287_1288858829",
+      "id": "20191207-104822_1943386475",
+      "dateCreated": "2019-12-07 10:48:22.287",
+      "dateStarted": "2019-12-07 10:51:35.691",
+      "dateFinished": "2019-12-07 10:51:35.694",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "newDF.withColumn(\"test\", $\"id\" + lit(2)).show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 10:51:35.792",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "org.apache.spark.sql.AnalysisException: cannot resolve \u0027`id`\u0027 given input columns: [(id + 1)];;\n\u0027Project [(id + 1)#1224L, (\u0027id + 2) AS test#1238]\n+- Project [(id#1218L + cast(1 as bigint)) AS (id + 1)#1224L]\n   +- Range (0, 10, step\u003d1, splits\u003dSome(8))\n\n  at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$3.applyOrElse(CheckAnalysis.scala:111)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1$$anonfun$apply$3.applyOrElse(CheckAnalysis.scala:108)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:281)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$transformUp$1.apply(TreeNode.scala:281)\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:280)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:278)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:278)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:329)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:187)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:327)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:278)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:278)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$3.apply(TreeNode.scala:278)\n  at org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:329)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:187)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapChildren(TreeNode.scala:327)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.transformUp(TreeNode.scala:278)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:93)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$transformExpressionsUp$1.apply(QueryPlan.scala:93)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$1.apply(QueryPlan.scala:105)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$1.apply(QueryPlan.scala:105)\n  at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:70)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpression$1(QueryPlan.scala:104)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:116)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1$2.apply(QueryPlan.scala:121)\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\n  at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)\n  at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n  at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)\n  at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)\n  at scala.collection.AbstractTraversable.map(Traversable.scala:104)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.org$apache$spark$sql$catalyst$plans$QueryPlan$$recursiveTransform$1(QueryPlan.scala:121)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan$$anonfun$2.apply(QueryPlan.scala:126)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.mapProductIterator(TreeNode.scala:187)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.mapExpressions(QueryPlan.scala:126)\n  at org.apache.spark.sql.catalyst.plans.QueryPlan.transformExpressionsUp(QueryPlan.scala:93)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:108)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$$anonfun$checkAnalysis$1.apply(CheckAnalysis.scala:86)\n  at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:127)\n  at org.apache.spark.sql.catalyst.analysis.CheckAnalysis$class.checkAnalysis(CheckAnalysis.scala:86)\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:95)\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:108)\n  at org.apache.spark.sql.catalyst.analysis.Analyzer$$anonfun$executeAndCheck$1.apply(Analyzer.scala:105)\n  at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:201)\n  at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:105)\n  at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:57)\n  at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:55)\n  at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:47)\n  at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:78)\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$withPlan(Dataset.scala:3412)\n  at org.apache.spark.sql.Dataset.select(Dataset.scala:1340)\n  at org.apache.spark.sql.Dataset.withColumns(Dataset.scala:2258)\n  at org.apache.spark.sql.Dataset.withColumn(Dataset.scala:2225)\n  ... 53 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712119341_1800412817",
+      "id": "20191207-104839_1824786637",
+      "dateCreated": "2019-12-07 10:48:39.341",
+      "dateStarted": "2019-12-07 10:51:35.802",
+      "dateFinished": "2019-12-07 10:51:36.077",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575712162031_-743663704",
+      "id": "20191207-104922_1102111589",
+      "dateCreated": "2019-12-07 10:49:22.031",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "solutions/logical-planning/motivation-example",
+  "id": "2EUEQ5GVQ",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
