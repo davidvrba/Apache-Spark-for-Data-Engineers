@@ -3,7 +3,7 @@
     {
       "text": "%md\n\n### Implement optimization rule\n* implement rule that converts CaseWhen to If expression if it is possible (CaseWhen has only one branch)\n* add the rule to Catalyst\n* see its impact in the plan",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:38:16.355",
+      "dateUpdated": "2019-12-07 15:39:10.888",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -33,18 +33,17 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1575711320937_1403329426",
+      "jobName": "paragraph_1575729550887_-289260377",
       "id": "20191207-102752_1858665541",
-      "dateCreated": "2019-12-07 10:35:20.937",
-      "dateStarted": "2019-12-07 15:38:16.356",
-      "dateFinished": "2019-12-07 15:38:16.359",
-      "status": "FINISHED",
+      "dateCreated": "2019-12-07 15:39:10.887",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "import org.apache.spark.sql.catalyst.expressions.{CaseWhen, If, Literal}\nimport org.apache.spark.sql.catalyst.plans.logical.LogicalPlan\nimport org.apache.spark.sql.catalyst.rules.Rule",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.938",
+      "dateUpdated": "2019-12-07 15:39:10.888",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -63,9 +62,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320938_1829427445",
+      "jobName": "paragraph_1575729550888_-1318341103",
       "id": "20191207-101548_1804278861",
-      "dateCreated": "2019-12-07 10:35:20.938",
+      "dateCreated": "2019-12-07 15:39:10.888",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -73,7 +72,7 @@
     {
       "text": "val usersDF \u003d spark.table(\"users\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.938",
+      "dateUpdated": "2019-12-07 15:39:10.888",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -92,9 +91,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320938_-1307284864",
+      "jobName": "paragraph_1575729550888_-451884083",
       "id": "20191207-102014_1333979185",
-      "dateCreated": "2019-12-07 10:35:20.938",
+      "dateCreated": "2019-12-07 15:39:10.888",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -102,7 +101,7 @@
     {
       "text": "%md\n### Use the following trnasformation",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:38:01.736",
+      "dateUpdated": "2019-12-07 15:39:10.888",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -132,18 +131,17 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1575711320938_396747988",
+      "jobName": "paragraph_1575729550888_1497206123",
       "id": "20191207-102958_1632313925",
-      "dateCreated": "2019-12-07 10:35:20.938",
-      "dateStarted": "2019-12-07 15:38:01.737",
-      "dateFinished": "2019-12-07 15:38:01.739",
-      "status": "FINISHED",
+      "dateCreated": "2019-12-07 15:39:10.888",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "val transformed \u003d usersDF.withColumn(\"skill\", when($\"reputation\" \u003e 1000, lit(\"advanced\")).otherwise(\"basic\")).select(\"skill\")",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.938",
+      "dateUpdated": "2019-12-07 15:39:10.889",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -162,9 +160,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320938_730870490",
+      "jobName": "paragraph_1575729550888_2074519473",
       "id": "20191207-101915_1245706252",
-      "dateCreated": "2019-12-07 10:35:20.938",
+      "dateCreated": "2019-12-07 15:39:10.889",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -172,7 +170,7 @@
     {
       "text": "transformed.explain()",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.938",
+      "dateUpdated": "2019-12-07 15:39:10.889",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -191,9 +189,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320938_-951895934",
+      "jobName": "paragraph_1575729550889_-1901537486",
       "id": "20191207-102119_1729436231",
-      "dateCreated": "2019-12-07 10:35:20.938",
+      "dateCreated": "2019-12-07 15:39:10.889",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -201,7 +199,7 @@
     {
       "text": "%md\n### Implement the rule",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:38:06.371",
+      "dateUpdated": "2019-12-07 15:39:10.889",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -231,47 +229,45 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-61340883",
+      "jobName": "paragraph_1575729550889_1072551946",
       "id": "20191207-103025_437733267",
-      "dateCreated": "2019-12-07 10:35:20.939",
-      "dateStarted": "2019-12-07 15:38:06.371",
-      "dateFinished": "2019-12-07 15:38:06.374",
-      "status": "FINISHED",
+      "dateCreated": "2019-12-07 15:39:10.889",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "object ConvertWhenToIf extends Rule[LogicalPlan]{\n    override def apply(plan: LogicalPlan): LogicalPlan \u003d plan transformAllExpressions {\n        case e @ CaseWhen(branches, elseValue) if branches.length \u003d\u003d 1 \u003d\u003e\n            // If there is only one branch in the CaseWhen rewrite it to If\n            // which has more efficient codeGen\n            If(branches(0)._1, branches(0)._2, elseValue.getOrElse(Literal.create(null, e.dataType)))\n    }\n}",
+      "text": "// your code here:",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.939",
+      "dateUpdated": "2019-12-07 15:39:38.209",
       "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
         "editorSetting": {
           "language": "scala",
           "editOnDblClick": false,
           "completionKey": "TAB",
           "completionSupport": true
         },
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "fontSize": 9.0,
-        "results": {},
-        "enabled": true
+        "editorMode": "ace/mode/scala"
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-89387090",
-      "id": "20191207-100440_1151312017",
-      "dateCreated": "2019-12-07 10:35:20.939",
+      "jobName": "paragraph_1575729569008_-283849578",
+      "id": "20191207-153929_1165503258",
+      "dateCreated": "2019-12-07 15:39:29.008",
       "status": "READY",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n\n### Register the rule",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:38:09.863",
+      "dateUpdated": "2019-12-07 15:39:10.889",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -301,18 +297,17 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-1897197572",
+      "jobName": "paragraph_1575729550889_-1750192525",
       "id": "20191207-103144_807533642",
-      "dateCreated": "2019-12-07 10:35:20.939",
-      "dateStarted": "2019-12-07 15:38:09.863",
-      "dateFinished": "2019-12-07 15:38:09.871",
-      "status": "FINISHED",
+      "dateCreated": "2019-12-07 15:39:10.889",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "spark.experimental.extraOptimizations \u003d Seq(ConvertWhenToIf)",
+      "text": "// your code here:",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.939",
+      "dateUpdated": "2019-12-07 15:39:47.194",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -331,9 +326,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-586450395",
+      "jobName": "paragraph_1575729550889_1242642941",
       "id": "20191207-101648_1144755160",
-      "dateCreated": "2019-12-07 10:35:20.939",
+      "dateCreated": "2019-12-07 15:39:10.889",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -341,7 +336,7 @@
     {
       "text": "%md\n\n### Run the query again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:38:13.213",
+      "dateUpdated": "2019-12-07 15:39:10.889",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -371,18 +366,17 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-2031751297",
+      "jobName": "paragraph_1575729550889_1709990380",
       "id": "20191207-103158_384107018",
-      "dateCreated": "2019-12-07 10:35:20.939",
-      "dateStarted": "2019-12-07 15:38:13.214",
-      "dateFinished": "2019-12-07 15:38:13.217",
-      "status": "FINISHED",
+      "dateCreated": "2019-12-07 15:39:10.889",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val transformedWithRule \u003d usersDF.withColumn(\"skill\", when($\"reputation\" \u003e 1000, lit(\"advanced\")).otherwise(\"basic\")).select(\"skill\")",
+      "text": "// your code here:",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.939",
+      "dateUpdated": "2019-12-07 15:39:54.250",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -401,9 +395,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_107368303",
+      "jobName": "paragraph_1575729550889_-1346149558",
       "id": "20191207-102649_764867750",
-      "dateCreated": "2019-12-07 10:35:20.939",
+      "dateCreated": "2019-12-07 15:39:10.889",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -411,7 +405,7 @@
     {
       "text": "%md\n\n### See the plan again",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:38:16.380",
+      "dateUpdated": "2019-12-07 15:39:10.889",
       "config": {
         "tableHide": false,
         "editorSetting": {
@@ -441,18 +435,17 @@
         ]
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-1647942129",
+      "jobName": "paragraph_1575729550889_-830270094",
       "id": "20191207-103213_2090894607",
-      "dateCreated": "2019-12-07 10:35:20.939",
-      "dateStarted": "2019-12-07 15:38:16.380",
-      "dateFinished": "2019-12-07 15:38:16.385",
-      "status": "FINISHED",
+      "dateCreated": "2019-12-07 15:39:10.889",
+      "status": "READY",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "transformedWithRule.explain()",
+      "text": "// your code here:",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.939",
+      "dateUpdated": "2019-12-07 15:40:08.879",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -471,32 +464,32 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_248680957",
+      "jobName": "paragraph_1575729550889_-569425555",
       "id": "20191207-102717_1963385060",
-      "dateCreated": "2019-12-07 10:35:20.939",
+      "dateCreated": "2019-12-07 15:39:10.889",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 10:35:20.939",
+      "dateUpdated": "2019-12-07 15:39:10.890",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575711320939_-2077481194",
+      "jobName": "paragraph_1575729550890_1378733646",
       "id": "20191207-102725_867881392",
-      "dateCreated": "2019-12-07 10:35:20.939",
+      "dateCreated": "2019-12-07 15:39:10.890",
       "status": "READY",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "solutions/logical-planning/logical-plans-II",
-  "id": "2ETU2HH57",
+  "name": "assignments/logical-planning/logical-plans-II",
+  "id": "2EX6H66BY",
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
