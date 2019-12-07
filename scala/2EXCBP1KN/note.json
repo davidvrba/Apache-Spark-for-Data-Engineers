@@ -1,0 +1,872 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n## Task I\n\u003cbr/\u003e\n* Data is partitioned by last 2 digits of user_id column\n* Compute how many users are in partition 05 and 06\n* path to the data is given bellow, format is parquet",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:55.303",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eTask I\u003c/h2\u003e\n\u003cbr/\u003e\n\u003cul\u003e\n  \u003cli\u003eData is partitioned by last 2 digits of user_id column\u003c/li\u003e\n  \u003cli\u003eCompute how many users are in partition 05 and 06\u003c/li\u003e\n  \u003cli\u003epath to the data is given bellow, format is parquet\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699147817_-1606076975",
+      "id": "20191207-071227_1223575752",
+      "dateCreated": "2019-12-07 07:12:27.817",
+      "dateStarted": "2019-12-07 07:53:55.324",
+      "dateFinished": "2019-12-07 07:53:55.333",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val dataPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersp\"",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:55.427",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "dataPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersp\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699190409_-1514493074",
+      "id": "20191207-071310_790129790",
+      "dateCreated": "2019-12-07 07:13:10.409",
+      "dateStarted": "2019-12-07 07:53:55.447",
+      "dateFinished": "2019-12-07 07:53:55.561",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val users \u003d spark.read.parquet(dataPath)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:55.655",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "users: org.apache.spark.sql.DataFrame \u003d [user_id: bigint, display_name: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699211005_-264966293",
+      "id": "20191207-071331_1524080866",
+      "dateCreated": "2019-12-07 07:13:31.005",
+      "dateStarted": "2019-12-07 07:53:55.674",
+      "dateFinished": "2019-12-07 07:53:56.123",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### isin\n* does not work because wrong datatype casting\n* see explain\n* last2_id is inferred as int\n* last2_id is cast to string in the filter",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:56.193",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eisin\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003edoes not work because wrong datatype casting\u003c/li\u003e\n  \u003cli\u003esee explain\u003c/li\u003e\n  \u003cli\u003elast2_id is inferred as int\u003c/li\u003e\n  \u003cli\u003elast2_id is cast to string in the filter\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699224035_-1863400469",
+      "id": "20191207-071344_202789020",
+      "dateCreated": "2019-12-07 07:13:44.035",
+      "dateStarted": "2019-12-07 07:53:56.211",
+      "dateFinished": "2019-12-07 07:53:56.216",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\".isin(\"05\", \"06\"))\n  .count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:56.312",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res14: Long \u003d 3072\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699234176_49620405",
+      "id": "20191207-071354_1050645863",
+      "dateCreated": "2019-12-07 07:13:54.176",
+      "dateStarted": "2019-12-07 07:53:56.331",
+      "dateFinished": "2019-12-07 07:53:56.606",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:56.638",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- user_id: long (nullable \u003d true)\n |-- display_name: string (nullable \u003d true)\n |-- location: string (nullable \u003d true)\n |-- downvotes: long (nullable \u003d true)\n |-- upvotes: long (nullable \u003d true)\n |-- reputation: long (nullable \u003d true)\n |-- views: long (nullable \u003d true)\n |-- last2_id: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699251713_454188046",
+      "id": "20191207-071411_972249722",
+      "dateCreated": "2019-12-07 07:14:11.713",
+      "dateStarted": "2019-12-07 07:53:56.655",
+      "dateFinished": "2019-12-07 07:53:56.765",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": " users\n  .filter($\"last2_id\".isin(\"05\", \"06\"))\n  .explain()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:56.855",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(1) FileScan parquet [user_id#139L,display_name#140,location#141,downvotes#142L,upvotes#143L,reputation#144L,views#145L,last2_id#146] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionCount: 2, PartitionFilters: [last2_id#146 IN (05,06)], PushedFilters: [], ReadSchema: struct\u003cuser_id:bigint,display_name:string,location:string,downvotes:bigint,upvotes:bigint,reputat...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699272030_-1515714598",
+      "id": "20191207-071432_1578720816",
+      "dateCreated": "2019-12-07 07:14:32.030",
+      "dateStarted": "2019-12-07 07:53:56.869",
+      "dateFinished": "2019-12-07 07:53:57.030",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### \u003d\u003d \n* does not work either\n* it will cast the right side to int and take 05 \u0026 5 together",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:57.069",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003e\u003d\u003d\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003edoes not work either\u003c/li\u003e\n  \u003cli\u003eit will cast the right side to int and take 05 \u0026amp; 5 together\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699284407_-52508346",
+      "id": "20191207-071444_294239910",
+      "dateCreated": "2019-12-07 07:14:44.407",
+      "dateStarted": "2019-12-07 07:53:57.081",
+      "dateFinished": "2019-12-07 07:53:57.085",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\" \u003d\u003d\u003d \"05\" || $\"last2_id\" \u003d\u003d\u003d \"06\")\n  .count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:57.186",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res17: Long \u003d 3072\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575700825491_61619411",
+      "id": "20191207-074025_485918218",
+      "dateCreated": "2019-12-07 07:40:25.491",
+      "dateStarted": "2019-12-07 07:53:57.201",
+      "dateFinished": "2019-12-07 07:53:57.456",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\" \u003d\u003d\u003d \"05\" || $\"last2_id\" \u003d\u003d\u003d \"06\")\n  .explain()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:57.507",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(1) FileScan parquet [user_id#139L,display_name#140,location#141,downvotes#142L,upvotes#143L,reputation#144L,views#145L,last2_id#146] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionCount: 2, PartitionFilters: [((last2_id#146 \u003d 05) || (last2_id#146 \u003d 06))], PushedFilters: [], ReadSchema: struct\u003cuser_id:bigint,display_name:string,location:string,downvotes:bigint,upvotes:bigint,reputat...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575701478051_2032954453",
+      "id": "20191207-075118_389713093",
+      "dateCreated": "2019-12-07 07:51:18.051",
+      "dateStarted": "2019-12-07 07:53:57.523",
+      "dateFinished": "2019-12-07 07:53:57.711",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Define schema",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:57.723",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eDefine schema\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699311211_1003727161",
+      "id": "20191207-071511_26255597",
+      "dateCreated": "2019-12-07 07:15:11.211",
+      "dateStarted": "2019-12-07 07:53:57.740",
+      "dateFinished": "2019-12-07 07:53:57.744",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.types._",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:57.844",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.types._\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575701178656_-1553453285",
+      "id": "20191207-074618_524137668",
+      "dateCreated": "2019-12-07 07:46:18.656",
+      "dateStarted": "2019-12-07 07:53:57.858",
+      "dateFinished": "2019-12-07 07:53:57.953",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val mySchema \u003d StructType(Seq(\n  StructField(\"last2_id\", StringType)))",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:57.959",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "mySchema: org.apache.spark.sql.types.StructType \u003d StructType(StructField(last2_id,StringType,true))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699323734_-543177414",
+      "id": "20191207-071523_1894019110",
+      "dateCreated": "2019-12-07 07:15:23.734",
+      "dateStarted": "2019-12-07 07:53:57.983",
+      "dateFinished": "2019-12-07 07:53:58.178",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val users \u003d spark.read.schema(mySchema).load(dataPath)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:58.183",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "users: org.apache.spark.sql.DataFrame \u003d [last2_id: string]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699342064_-1579558893",
+      "id": "20191207-071542_1045051659",
+      "dateCreated": "2019-12-07 07:15:42.064",
+      "dateStarted": "2019-12-07 07:53:58.212",
+      "dateFinished": "2019-12-07 07:53:58.584",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\".isin(\"05\", \"06\"))\n  .count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:58.617",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res19: Long \u003d 3072\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699353718_1590678459",
+      "id": "20191207-071553_1599898382",
+      "dateCreated": "2019-12-07 07:15:53.718",
+      "dateStarted": "2019-12-07 07:53:58.630",
+      "dateFinished": "2019-12-07 07:53:58.849",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\".isin(\"05\", \"06\"))\n  .explain()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:58.938",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(1) FileScan parquet [last2_id#183] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionCount: 2, PartitionFilters: [last2_id#183 IN (05,06)], PushedFilters: [], ReadSchema: struct\u003c\u003e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699365320_-1788969795",
+      "id": "20191207-071605_1584440961",
+      "dateCreated": "2019-12-07 07:16:05.320",
+      "dateStarted": "2019-12-07 07:53:58.952",
+      "dateFinished": "2019-12-07 07:53:59.137",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Or turn off type inference for partition cols",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:59.156",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eOr turn off type inference for partition cols\u003c/h3\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699378207_-516957007",
+      "id": "20191207-071618_1682800430",
+      "dateCreated": "2019-12-07 07:16:18.207",
+      "dateStarted": "2019-12-07 07:53:59.169",
+      "dateFinished": "2019-12-07 07:53:59.172",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.sources.partitionColumnTypeInference.enabled\", false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:59.270",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699390019_-1558580093",
+      "id": "20191207-071630_1930996953",
+      "dateCreated": "2019-12-07 07:16:30.020",
+      "dateStarted": "2019-12-07 07:53:59.282",
+      "dateFinished": "2019-12-07 07:53:59.368",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val users \u003d spark.read.parquet(data_path)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:59.385",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cconsole\u003e:29: error: not found: value data_path\n       val users \u003d spark.read.parquet(data_path)\n                                      ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699401277_-2080183262",
+      "id": "20191207-071641_544926036",
+      "dateCreated": "2019-12-07 07:16:41.277",
+      "dateStarted": "2019-12-07 07:53:59.404",
+      "dateFinished": "2019-12-07 07:53:59.419",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\".isin(\"05\", \"06\"))\n  .count()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:22.692",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res12: Long \u003d 3072\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699413530_1090815135",
+      "id": "20191207-071653_1506474892",
+      "dateCreated": "2019-12-07 07:16:53.530",
+      "dateStarted": "2019-12-07 07:53:22.692",
+      "dateFinished": "2019-12-07 07:53:22.986",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "users\n  .filter($\"last2_id\".isin(\"05\", \"06\"))\n  .explain()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-07 07:53:41.917",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003d\u003d Physical Plan \u003d\u003d\n*(1) FileScan parquet [last2_id#122] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/u..., PartitionCount: 2, PartitionFilters: [last2_id#122 IN (05,06)], PushedFilters: [], ReadSchema: struct\u003c\u003e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1575699429450_651833163",
+      "id": "20191207-071709_32800736",
+      "dateCreated": "2019-12-07 07:17:09.450",
+      "dateStarted": "2019-12-07 07:53:41.917",
+      "dateFinished": "2019-12-07 07:53:42.158",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1575701621897_1602507406",
+      "id": "20191207-075341_774241827",
+      "dateCreated": "2019-12-07 07:53:41.897",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "solutions/physical-planning/physical-plans-I",
+  "id": "2EXCBP1KN",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
