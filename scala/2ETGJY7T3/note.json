@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "val usersPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\"\nval questionsPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\"\nval answersPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/answers\"\n\nval usersOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\"\n\nval usersOutputPathP \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\"\n\nval usersOutputPathB \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\"\n\nval questionsOutputPathA \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questionsB\"\n\nval questionsOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questions\"\n\nval answersOutputPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/answers\"",
+      "text": "val basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\n\nval usersPath \u003d basePath + \"/data/users\"\nval questionsPath \u003d basePath + \"/data/questions\"\nval answersPath \u003d basePath + \"/data/answers\"\n\nval usersOutputPath \u003d basePath + \"/output/users\"\n\nval usersOutputPathP \u003d basePath + \"/output/usersP\"\n\nval usersOutputPathB \u003d basePath + \"/output/usersB\"\n\nval questionsOutputPathA \u003d basePath + \"/output/questionsB\"\n\nval questionsOutputPath \u003d basePath + \"/output/questions\"\n\nval answersOutputPath \u003d basePath + \"/output/answers\"",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:25:21.036",
+      "dateUpdated": "2019-12-07 16:27:31.838",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
