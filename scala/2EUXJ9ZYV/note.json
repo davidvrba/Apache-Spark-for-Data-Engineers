@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n\n# Union two aggregated subresults\n\n* Work with the answers dataset\n* For each question compute how many answers it has\n* For each question compute the sum of the answer\u0027s score\n* Combine these subresults into one final output using Union\n * The output should have three cols: question_id, metricValue, metricName (which is either sum or count)",
+      "text": "%md\n\n# Union two aggregated subresults\n\n* Work with the answers dataset\n* For each question compute how many answers it has\n* For each question compute the sum of the answer\u0027s score\n* Combine these subresults into one final output using Union\n* The output should have three cols: question_id, metricValue, metricName (which is either sum or count)\n* Check the final plan and see if it is optimal\n* Try to optimize if possible",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:44:12.592",
+      "dateUpdated": "2019-12-07 15:29:25.445",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -28,7 +28,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eUnion two aggregated subresults\u003c/h1\u003e\n\u003cul\u003e\n  \u003cli\u003eWork with the answers dataset\u003c/li\u003e\n  \u003cli\u003eFor each question compute how many answers it has\u003c/li\u003e\n  \u003cli\u003eFor each question compute the sum of the answer\u0026rsquo;s score\u003c/li\u003e\n  \u003cli\u003eCombine these subresults into one final output using Union\u003c/li\u003e\n  \u003cli\u003eThe output should have three cols: question_id, metricValue, metricName (which is either sum or count)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eUnion two aggregated subresults\u003c/h1\u003e\n\u003cul\u003e\n  \u003cli\u003eWork with the answers dataset\u003c/li\u003e\n  \u003cli\u003eFor each question compute how many answers it has\u003c/li\u003e\n  \u003cli\u003eFor each question compute the sum of the answer\u0026rsquo;s score\u003c/li\u003e\n  \u003cli\u003eCombine these subresults into one final output using Union\u003c/li\u003e\n  \u003cli\u003eThe output should have three cols: question_id, metricValue, metricName (which is either sum or count)\u003c/li\u003e\n  \u003cli\u003eCheck the final plan and see if it is optimal\u003c/li\u003e\n  \u003cli\u003eTry to optimize if possible\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -36,8 +36,8 @@
       "jobName": "paragraph_1575703214225_871988558",
       "id": "20191207-082014_1752733988",
       "dateCreated": "2019-12-07 08:20:14.225",
-      "dateStarted": "2019-12-07 08:44:12.608",
-      "dateFinished": "2019-12-07 08:44:12.616",
+      "dateStarted": "2019-12-07 15:29:25.445",
+      "dateFinished": "2019-12-07 15:29:25.454",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -64,15 +64,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "answersDF: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, answer_id: bigint ... 4 more fields]\n"
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575703242085_1854181687",
       "id": "20191207-082042_64513190",
@@ -80,6 +71,7 @@
       "dateStarted": "2019-12-07 08:44:12.730",
       "dateFinished": "2019-12-07 08:44:12.907",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -105,15 +97,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "dfSum: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\ndfCount: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nresultDF: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nres41: Array[org.apache.spark.sql.Row] \u003d Array([358014,0,sum], [263659,1,sum], [156388,2,sum], [361097,2,sum], [179205,1,sum], [381364,0,sum], [210691,6,sum], [214619,2,sum], [176501,1,sum], [158917,1,sum], [363321,2,sum], [261510,2,sum], [276582,3,sum], [375564,0,sum], [283017,5,sum], [314481,1,sum], [184659,28,sum], [437161,1,sum], [251310,2,sum], [436534,4,sum], [161736,2,sum], [161095,2,sum], [326696,3,sum], [193283,1,sum], [294500,4,sum], [390098,2,sum], [327..."
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575703260022_178654171",
       "id": "20191207-082100_629489903",
@@ -121,6 +104,7 @@
       "dateStarted": "2019-12-07 08:44:12.942",
       "dateFinished": "2019-12-07 08:44:14.975",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -144,15 +128,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "dfCommon: org.apache.spark.sql.RelationalGroupedDataset \u003d RelationalGroupedDataset: [grouping expressions: [question_id: bigint], value: [question_id: bigint, answer_id: bigint ... 4 more fields], type: GroupBy]\ndfSum: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\ndfCount: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nresultDF: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nres42: Array[org.apache.spark.sql.Row] \u003d Array([358014,0,sum], [263659,1,sum], [156388,2,sum], [361097,2,sum], [179205,1,sum], [381364,0,sum], [210691,6,sum], [214619,2,sum], [176501,1,sum], [158917,1,sum], [363321,2,sum], [261510,2,sum], [276582,3,sum], [..."
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575703715200_-476987233",
       "id": "20191207-082835_1397968931",
@@ -160,6 +135,7 @@
       "dateStarted": "2019-12-07 08:44:14.994",
       "dateFinished": "2019-12-07 08:44:16.785",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -183,15 +159,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "dfSum: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\ndfCount: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nresultDF: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nres43: Array[org.apache.spark.sql.Row] \u003d Array([358014,0,sum], [263659,1,sum], [156388,2,sum], [361097,2,sum], [179205,1,sum], [381364,0,sum], [210691,6,sum], [214619,2,sum], [176501,1,sum], [158917,1,sum], [363321,2,sum], [261510,2,sum], [276582,3,sum], [375564,0,sum], [283017,5,sum], [314481,1,sum], [184659,28,sum], [437161,1,sum], [251310,2,sum], [436534,4,sum], [161736,2,sum], [161095,2,sum], [326696,3,sum], [193283,1,sum], [294500,4,sum], [390098,2,sum], [327..."
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575703840568_-1253239805",
       "id": "20191207-083040_1640582337",
@@ -199,6 +166,7 @@
       "dateStarted": "2019-12-07 08:44:16.831",
       "dateFinished": "2019-12-07 08:44:18.543",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -222,15 +190,6 @@
         "params": {},
         "forms": {}
       },
-      "results": {
-        "code": "SUCCESS",
-        "msg": [
-          {
-            "type": "TEXT",
-            "data": "dfCommon: org.apache.spark.sql.RelationalGroupedDataset \u003d RelationalGroupedDataset: [grouping expressions: [question_id: bigint], value: [question_id: bigint, answer_id: bigint ... 4 more fields], type: GroupBy]\ndfSum: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\ndfCount: org.apache.spark.sql.DataFrame \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nresultDF: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [question_id: bigint, metricValue: bigint ... 1 more field]\nres44: Array[org.apache.spark.sql.Row] \u003d Array([358014,0,sum], [263659,1,sum], [156388,2,sum], [361097,2,sum], [179205,1,sum], [381364,0,sum], [210691,6,sum], [214619,2,sum], [176501,1,sum], [158917,1,sum], [363321,2,sum], [261510,2,sum], [276582,3,sum], [..."
-          }
-        ]
-      },
       "apps": [],
       "jobName": "paragraph_1575704367374_351827105",
       "id": "20191207-083927_780735162",
@@ -238,12 +197,13 @@
       "dateStarted": "2019-12-07 08:44:18.576",
       "dateFinished": "2019-12-07 08:44:20.298",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n\n### What is the cost of this optimization?\n* when do we use it?\n\u003c/br\u003e\u003c/br\u003e\n* We shuffle the whole dataset but we do only one shuffle write (there still will be two shuffle reads)\n* So long as this one shuffle is faster than two originals, this technique is prefered",
+      "text": "%md\n\n### What is the cost of this optimization?\n\nWhen do we use it?\n\n* We shuffle the whole dataset but we do only one shuffle write (there still will be two shuffle reads)\n* So long as this one shuffle is faster than two originals, this technique is prefered",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:44:20.400",
+      "dateUpdated": "2019-12-07 15:28:11.685",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -268,7 +228,7 @@
         "msg": [
           {
             "type": "HTML",
-            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eWhat is the cost of this optimization?\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003ewhen do we use it?\u003cbr/\u003e\u003c/br\u003e\u003c/br\u003e\u003c/li\u003e\n  \u003cli\u003eWe shuffle the whole dataset but we do only one shuffle write (there still will be two shuffle reads)\u003c/li\u003e\n  \u003cli\u003eSo long as this one shuffle is faster than two originals, this technique is prefered\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eWhat is the cost of this optimization?\u003c/h3\u003e\n\u003cp\u003eWhen do we use it?\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003eWe shuffle the whole dataset but we do only one shuffle write (there still will be two shuffle reads)\u003c/li\u003e\n  \u003cli\u003eSo long as this one shuffle is faster than two originals, this technique is prefered\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
           }
         ]
       },
@@ -276,24 +236,36 @@
       "jobName": "paragraph_1575704525144_1690982374",
       "id": "20191207-084205_731103105",
       "dateCreated": "2019-12-07 08:42:05.144",
-      "dateStarted": "2019-12-07 08:44:20.416",
-      "dateFinished": "2019-12-07 08:44:20.422",
+      "dateStarted": "2019-12-07 15:28:11.685",
+      "dateFinished": "2019-12-07 15:28:11.689",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n",
+      "text": "",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 08:44:20.400",
-      "config": {},
+      "dateUpdated": "2019-12-07 15:28:25.584",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575704660400_-1591575974",
-      "id": "20191207-084420_2112597000",
-      "dateCreated": "2019-12-07 08:44:20.400",
+      "jobName": "paragraph_1575728891677_1067733573",
+      "id": "20191207-152811_1792193868",
+      "dateCreated": "2019-12-07 15:28:11.677",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }
