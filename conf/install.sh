@@ -33,5 +33,7 @@ echo 'export ZEPPELIN_NOTEBOOK_DIR=/home/student/Apache-Spark-for-Data-Engineers
 
 echo 'export SPARK_HOME=/home/student/spark-2.4.4-bin-hadoop2.7' >> /home/student/zeppelin-0.8.2-bin-all/conf/zeppelin-env.sh
 
+sudo chmod -R o+rw zeppelin-0.8.2-bin-all
+
 cd /home/student/zeppelin-0.8.2-bin-all
 ./bin/zeppelin-daemon.sh start
