@@ -41,9 +41,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val dataPath \u003d \"/Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersp\"",
+      "text": "val basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\n\nval dataPath \u003d basePath + \"/output/usersP\"",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:17:31.531",
+      "dateUpdated": "2019-12-12 21:00:29.003",
       "config": {
         "editorSetting": {
           "language": "scala",
@@ -66,7 +66,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "dataPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersp\n"
+            "data": "basePath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers\ndataPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\n"
           }
         ]
       },
@@ -74,8 +74,9 @@
       "jobName": "paragraph_1575728251531_-1491709725",
       "id": "20191207-071310_790129790",
       "dateCreated": "2019-12-07 15:17:31.531",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "2019-12-12 21:00:29.012",
+      "dateFinished": "2019-12-12 21:01:35.026",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {

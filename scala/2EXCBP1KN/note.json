@@ -3,7 +3,7 @@
     {
       "text": "%md\n\n## Task I\n\u003cbr/\u003e\n* Data is partitioned by last 2 digits of user_id column\n* Compute how many users are in partition 05 and 06\n* path to the data is given bellow, format is parquet",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 15:08:24.404",
+      "dateUpdated": "2019-12-12 20:58:53.338",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -36,15 +36,15 @@
       "jobName": "paragraph_1575699147817_-1606076975",
       "id": "20191207-071227_1223575752",
       "dateCreated": "2019-12-07 07:12:27.817",
-      "dateStarted": "2019-12-07 15:08:24.404",
-      "dateFinished": "2019-12-07 15:08:24.411",
+      "dateStarted": "2019-12-12 20:58:53.340",
+      "dateFinished": "2019-12-12 20:59:28.441",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\n\nval usersPath \u003d basePath + \"/output/usersp\"\n\n",
+      "text": "val basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\n\nval dataPath \u003d basePath + \"/output/usersP\"\n",
       "user": "anonymous",
-      "dateUpdated": "2019-12-12 20:19:02.367",
+      "dateUpdated": "2019-12-12 21:00:08.745",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -631,9 +631,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "val users \u003d spark.read.parquet(data_path)",
+      "text": "val users \u003d spark.read.parquet(dataPath)",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 07:53:59.385",
+      "dateUpdated": "2019-12-12 20:59:23.657",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
