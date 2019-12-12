@@ -1,0 +1,582 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n## Use of bucketing\n\n* shuffle-free join\n* one-side shuffle-free join\n* bucket pruning",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.313",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eUse of bucketing\u003c/h2\u003e\n\u003cul\u003e\n  \u003cli\u003eshuffle-free join\u003c/li\u003e\n  \u003cli\u003eone-side shuffle-free join\u003c/li\u003e\n  \u003cli\u003ebucket pruning\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578313_-1351521089",
+      "id": "20191210-165235_239909736",
+      "dateCreated": "2019-12-12 07:02:58.313",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Task I - one-side shuffle-free join\n\n* join users with questions (users are bucketed by user_id into 20 buckets, questions are not bucketed)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.314",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eTask I - one-side shuffle-free join\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003ejoin users with questions (users are bucketed by user_id into 20 buckets, questions are not bucketed)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578313_975123109",
+      "id": "20191211-173507_1483338431",
+      "dateCreated": "2019-12-12 07:02:58.313",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.conf.set(\"spark.sql.autoBroadcastJoinThreshold\", -1)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.314",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578314_1472222975",
+      "id": "20191211-173145_2006344221",
+      "dateCreated": "2019-12-12 07:02:58.314",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val users \u003d spark.table(\"usersb\")\nval questions \u003d spark.table(\"questions\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.314",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578314_1359727109",
+      "id": "20191210-165324_828979409",
+      "dateCreated": "2019-12-12 07:02:58.314",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// see how the table is bucketed\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:03:22.245",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578314_798486221",
+      "id": "20191211-172756_523823924",
+      "dateCreated": "2019-12-12 07:02:58.314",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// exchange is in both branches\nusers.join(questions, \"user_id\").explain()",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.314",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578314_-472776717",
+      "id": "20191211-172810_466944860",
+      "dateCreated": "2019-12-12 07:02:58.314",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// remove exchange from one branch:\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:03:59.468",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578314_-1832412942",
+      "id": "20191211-172932_1580024047",
+      "dateCreated": "2019-12-12 07:02:58.314",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Task II Bucketing \u0026 shuffle-free join\n\n* save questions into another table that will be bucketed by user_id into 20 buckets\n* do not worry about number of files in this example - we will solve it in the next notebook\n* join the table with usersb\n* compute number of questions per each user (aggregate questions)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.315",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eTask II Bucketing \u0026amp; shuffle-free join\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003esave questions into another table that will be bucketed by user_id into 20 buckets\u003c/li\u003e\n  \u003cli\u003edo not worry about number of files in this example - we will solve it in the next notebook\u003c/li\u003e\n  \u003cli\u003ejoin the table with usersb\u003c/li\u003e\n  \u003cli\u003ecompute number of questions per each user (aggregate questions)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578314_2039788298",
+      "id": "20191211-175438_2139279797",
+      "dateCreated": "2019-12-12 07:02:58.314",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// path where to save the table\n\nval basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\nval questionsOutputPathB \u003d basePath + \"/output/questionsB\"\n\n//table name\nval questionsTableName \u003d \"questionsB\"",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.315",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_-982643327",
+      "id": "20191211-175657_1466881081",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// saving the table\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:06:41.316",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_959637948",
+      "id": "20191211-175825_1463553376",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "spark.sql(\"desc extended questionsB\").show(false)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.315",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_-606624504",
+      "id": "20191211-180232_1761619801",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val questionsB \u003d spark.table(questionsTableName)",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:04:31.639",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_-1253055601",
+      "id": "20191211-180103_1224544641",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// see again the plan of the join (there should be no exchange)\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:06:45.067",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_1005470677",
+      "id": "20191211-180135_387132481",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// aggregate questionsB by user_id and count number of records per user\n// see SparkUI - there should be no exchange in this job\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:06:50.576",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_-1500176511",
+      "id": "20191211-180347_1946663887",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n\n### Task III - Bucket pruning\n\n* get all records from the questions table where user_id \u003d 189394\n* compare reading from bucketed vs not buckted table",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.316",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eTask III - Bucket pruning\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eget all records from the questions table where user_id \u003d 189394\u003c/li\u003e\n  \u003cli\u003ecompare reading from bucketed vs not buckted table\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578315_-1322377804",
+      "id": "20191211-172931_1974922119",
+      "dateCreated": "2019-12-12 07:02:58.315",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// this one is not bucketed\nval answers \u003d spark.table(\"answers\")\n\n// this one is bucketed\nval answersB \u003d spark.table(\"answersB\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:02:58.316",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578316_-1952282367",
+      "id": "20191211-174737_777107218",
+      "dateCreated": "2019-12-12 07:02:58.316",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// filter non-bucketed table:\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:06:08.988",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578316_1437072345",
+      "id": "20191211-172929_1182291260",
+      "dateCreated": "2019-12-12 07:02:58.316",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// filter bucketed table:\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 07:06:28.490",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130578316_-1282368550",
+      "id": "20191211-174252_1494045455",
+      "dateCreated": "2019-12-12 07:02:58.316",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "assignments/performance/bucketing-I",
+  "id": "2EVNKCVET",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

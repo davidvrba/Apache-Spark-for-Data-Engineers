@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "val basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\n\nval usersPath \u003d basePath + \"/data/users\"\nval questionsPath \u003d basePath + \"/data/questions\"\nval answersPath \u003d basePath + \"/data/answers\"\n\nval usersOutputPath \u003d basePath + \"/output/users\"\n\nval usersOutputPathP \u003d basePath + \"/output/usersP\"\n\nval usersOutputPathB \u003d basePath + \"/output/usersB\"\n\nval questionsOutputPathA \u003d basePath + \"/output/questionsB\"\n\nval questionsOutputPath \u003d basePath + \"/output/questions\"\n\nval answersOutputPath \u003d basePath + \"/output/answers\"",
+      "text": "val basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\n\nval usersPath \u003d basePath + \"/data/users\"\nval questionsPath \u003d basePath + \"/data/questions\"\nval answersPath \u003d basePath + \"/data/answers\"\n\nval usersOutputPath \u003d basePath + \"/output/users\"\n\nval usersOutputPathP \u003d basePath + \"/output/usersP\"\n\nval usersOutputPathB \u003d basePath + \"/output/usersB\"\n\nval questionsOutputPathA \u003d basePath + \"/output/questionsA\"\n\nval questionsOutputPath \u003d basePath + \"/output/questions\"\n\nval answersOutputPath \u003d basePath + \"/output/answers\"\n\nval answersOutputPathB \u003d basePath + \"/output/answersB\"",
       "user": "anonymous",
-      "dateUpdated": "2019-12-07 16:27:31.838",
+      "dateUpdated": "2019-12-11 17:43:29.967",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -26,7 +26,7 @@
         "msg": [
           {
             "type": "TEXT",
-            "data": "usersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\nquestionsPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\nanswersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/answers\nusersOutputPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\nusersOutputPathP: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\nusersOutputPathB: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\nquestionsOutputPathA: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/questionsB\nquestionsOutputPath: String \u003d /Users/david.vrba/spark-traini..."
+            "data": "basePath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers\nusersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/users\nquestionsPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/questions\nanswersPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/data/answers\nusersOutputPath: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/users\nusersOutputPathP: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersP\nusersOutputPathB: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Engineers/output/usersB\nquestionsOutputPathA: String \u003d /Users/david.vrba/spark-trainings/Apache-Spark-for-Data-Eng..."
           }
         ]
       },
@@ -34,8 +34,8 @@
       "jobName": "paragraph_1575700164519_1655730637",
       "id": "20191207-072924_1750880852",
       "dateCreated": "2019-12-07 07:29:24.519",
-      "dateStarted": "2019-12-07 08:25:21.050",
-      "dateFinished": "2019-12-07 08:25:21.193",
+      "dateStarted": "2019-12-11 17:43:29.977",
+      "dateFinished": "2019-12-11 17:43:30.275",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -244,6 +244,40 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "spark.table(\"answers\")\n  .repartition(20, $\"user_id\")\n  .write\n  .mode(\"overwrite\")\n  .bucketBy(20, \"user_id\")\n  .option(\"path\", answersOutputPathB)\n  .saveAsTable(\"answersB\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-11 17:45:17.296",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1575703579798_-2077917764",
+      "id": "20191207-082619_2126946651",
+      "dateCreated": "2019-12-07 08:26:19.798",
+      "dateStarted": "2019-12-11 17:45:17.309",
+      "dateFinished": "2019-12-11 17:45:19.342",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
       "user": "anonymous",
       "config": {},
       "settings": {
@@ -251,9 +285,9 @@
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1575703579798_-2077917764",
-      "id": "20191207-082619_2126946651",
-      "dateCreated": "2019-12-07 08:26:19.798",
+      "jobName": "paragraph_1576082710579_1985099332",
+      "id": "20191211-174510_790645724",
+      "dateCreated": "2019-12-11 17:45:10.579",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }

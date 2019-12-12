@@ -1,0 +1,143 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n\n### Data preparation\n\n* prepare questions dataset as follows:\n    * save it as a table \n    * partition by year\n    * bucket by user_id\n    * have 20 buckets\n    * sort by user_id, views\n    * have one file per bucket\n    * assume the dataset has aprox 5GB and you wont it run in 50 tasks (each partition to have cca 100MB)\n\nHint\n\n* use pmod \u0026 hash functions to distribute the data on the Spark cluster",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 06:57:00.105",
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch3\u003eData preparation\u003c/h3\u003e\n\u003cul\u003e\n  \u003cli\u003eprepare questions dataset as follows:\n    \u003cul\u003e\n      \u003cli\u003esave it as a table\u003c/li\u003e\n      \u003cli\u003epartition by year\u003c/li\u003e\n      \u003cli\u003ebucket by user_id\u003c/li\u003e\n      \u003cli\u003ehave 20 buckets\u003c/li\u003e\n      \u003cli\u003esort by user_id, views\u003c/li\u003e\n      \u003cli\u003ehave one file per bucket\u003c/li\u003e\n      \u003cli\u003eassume the dataset has aprox 5GB and you wont it run in 50 tasks (each partition to have cca 100MB)\u003c/li\u003e\n    \u003c/ul\u003e\n  \u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eHint\u003c/p\u003e\n\u003cul\u003e\n  \u003cli\u003euse pmod \u0026amp; hash functions to distribute the data on the Spark cluster\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130220105_1699157975",
+      "id": "20191211-210004_1902290601",
+      "dateCreated": "2019-12-12 06:57:00.105",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// path where to save the data\n\nval basePath \u003d  sys.env(\"ZEPPELIN_NOTEBOOK_DIR\").split(\"/\").dropRight(1).mkString(\"/\")\nval questionsOutputPathPB \u003d basePath + \"/output/questionsPB\"\nval tableName \u003d \"questionsPB\"",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 06:57:00.106",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130220106_-755528197",
+      "id": "20191211-210842_1278093709",
+      "dateCreated": "2019-12-12 06:57:00.106",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val questions \u003d spark.table(\"questions\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 06:57:16.817",
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130220106_1637215949",
+      "id": "20191211-210147_2058351489",
+      "dateCreated": "2019-12-12 06:57:00.106",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "// your code here",
+      "user": "anonymous",
+      "dateUpdated": "2019-12-12 06:57:43.704",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1576130220107_-150376462",
+      "id": "20191212-065606_1419883186",
+      "dateCreated": "2019-12-12 06:57:00.107",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "assignments/performance/bucketing-II",
+  "id": "2EWXW79N9",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
