@@ -9,7 +9,7 @@ apt-get --assume-yes install openjdk-8-jdk
 echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> ~/.bashrc
 apt-get --assume-yes install scala
 pip3 install py4j
-pip3 install delta
+pip3 install delta-spark
 pip3 install jupyter
 
 wget /home/$student https://archive.apache.org/dist/spark/spark-3.3.2/spark-3.3.2-bin-hadoop3.tgz
